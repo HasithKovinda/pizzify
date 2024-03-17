@@ -3,11 +3,9 @@ import { features } from "../data/data";
 
 function Works() {
   return (
-    <section className="mt-28 px-14">
-      <h1 className="text-6xl font-bold text-gray-800 text-center mb-5">
-        How It Works
-      </h1>
-      <p className="text-center text-slate-500">
+    <section className="mt-28 px-14 md:max-w-screen-2xl mx-auto">
+      <h1 className="heading">How It Works</h1>
+      <p className="text-center text-lightGray">
         Magna sit amet purus gravida quis blandit turpis cursus. Venenatis
         tellus in metus vulputate eu scelerisque felis.
       </p>

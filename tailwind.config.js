@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         primary: "#f29f05",
+        lightGray: "#64748b",
       },
       backgroundImage: {
         linearGradient: "30deg, #f29f05 50%, transparent 50%",
