@@ -1,5 +1,9 @@
+import NavBar from "./UI/NavBar";
+
 function App() {
-  return <div className="text-xl text-red-600 font-bold">App</div>;
+  return <>
+   <NavBar/>
+  </>;
 }
 
 export default App;
