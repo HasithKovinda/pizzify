@@ -4,7 +4,7 @@ import { useState } from "react";
 function NavBar() {
   const [showSideBar, setShowSideBar] = useState(false);
   return (
-    <nav className="md:flex md:items-center md:justify-between md:max-w-screen-2xl md:mx-auto py-3 px-2">
+    <nav className="md:flex md:items-center md:justify-between md:max-w-screen-2xl md:mx-auto px-10  py-3 md:px-2">
       <div className="flex items-center justify-between p-4 md:p-0">
         <h1 className="font-sans text-3xl font-bold tracking-wide uppercase">
           quick<span className="text-primary">eat</span>
