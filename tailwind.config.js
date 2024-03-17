@@ -9,6 +9,9 @@ export default {
       colors: {
         primary: "#f29f05",
       },
+      backgroundImage: {
+        linearGradient: "30deg, #f29f05 50%, transparent 50%",
+      },
     },
   },
   plugins: [],
