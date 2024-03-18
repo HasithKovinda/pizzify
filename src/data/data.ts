@@ -6,6 +6,10 @@ import logoOne from "../asserts/logo-1.jpg";
 import logoTwo from "../asserts/logo-2.jpg";
 import logoTree from "../asserts/logo-3.jpg";
 
+import pizzOne from "../asserts/pizza-1.jpg";
+import pizzTwo from "../asserts/pizza-2.jpg";
+import pizzTree from "../asserts/pizza-3.jpg";
+
 export type featuresType = {
   image: string;
   title: string;
@@ -65,5 +69,25 @@ export const restaurantData: restaurantType[] = [
     subHeadings: ["healthy", "steakhouse", "vegetarian"],
     content:
       "Tortor at risus viverra adipiscing at in tellus. Cras semper auctor neque vitae tempus. Dui accumsan sit amet nulla facilisi. Sed adipiscing diam donec adipiscing tristique.",
+  },
+];
+
+export type serviceType = {
+  image: string;
+  title: string;
+};
+
+export const serviceData: serviceType[] = [
+  {
+    image: pizzOne,
+    title: "With Quickeat you can order food for the whole day",
+  },
+  {
+    image: pizzTwo,
+    title: "127+ Couriers On Our Team!",
+  },
+  {
+    image: pizzTree,
+    title: "Why You Should Optimize Your Menu for Delivery",
   },
 ];
