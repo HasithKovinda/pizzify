@@ -18,8 +18,8 @@ function Favorite() {
           <span className="text-primary">Pizza</span>
         </div>
       </div>
-      <div className="max-w-sm xl:max-w-xl">
-        <h1 className="heading text-4xl md:text-left lg:text-6xl">
+      <div className="max-w-sm xl:max-w-xl mx-auto">
+        <h1 className="heading  text-4xl md:text-left lg:text-6xl">
           Food from your favorite restaurants to your table
         </h1>
         <p className="text-lightGray text-center md:text-left text-2xl">

@@ -3,6 +3,7 @@ import NavBar from "./UI/NavBar";
 import Works from "./UI/Works";
 import Favorite from "./components/Favorite";
 import Restaurants from "./components/Restaurants";
+import Service from "./components/Service";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Works />
       <Restaurants />
       <Favorite />
+      <Service />
     </>
   );
 }
