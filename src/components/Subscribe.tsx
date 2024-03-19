@@ -2,12 +2,12 @@ import { BiBell } from "react-icons/bi";
 import subscribe from "../asserts/subscribe.png";
 function Subscribe() {
   return (
-    <section className="max-w-screen-2xl mx-auto mt-20 px-14 lg:flex lg:items-center lg:gap-8">
+    <section className="max-w-screen-2xl mx-auto mt-20 px-12 lg:flex lg:items-center lg:gap-8">
       <div>
-        <img src={subscribe} alt="subscribe" />
+        <img src={subscribe} alt="subscribe" className="block mx-auto" />
       </div>
-      <div className="w-full mt-8 md:mt-8 mx-auto">
-        <h1 className="heading ">
+      <div className="w-full mt-8 md:mt-8 mx-auto max-w-xl">
+        <h1 className="heading text-4xl xl:text-6xl">
           Get the menu of your favorite restaurants every day
         </h1>
 
@@ -18,9 +18,6 @@ function Subscribe() {
             placeholder="Enter Email Address"
             className="text-xl py-4 px-10 shadow-xl placeholder:text-gray-400 placeholder:text-xl focus:outline-none focus:ring focus:ring-yellow-500"
           />
-          {/* <button className="btn text-wxl text-white uppercase border border-primary py-4 px-3 hover:text-primary">
-          Subscribe
-        </button> */}
           <button
             className=" text-2xl btn text-white tracking-wide uppercase border border-primary py-4 px-6 hover:text-primary shadow-xl 
          focus:bg-yellow-500  focus:outline-none focus:ring focus:ring-yellow-500 focus:ring-offset-2 "

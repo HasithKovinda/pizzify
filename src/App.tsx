@@ -17,7 +17,7 @@ function App() {
       <Favorite />
       <Service />
       <Events />
-      {/* <Subscribe /> */}
+      <Subscribe />
     </>
   );
 }
