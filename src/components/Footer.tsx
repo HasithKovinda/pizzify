@@ -8,8 +8,8 @@ import {
 } from "react-icons/bi";
 function Footer() {
   return (
-    <footer className="bg-zinc-900 mt-20">
-      <section className="max-w-screen-2xl mx-auto px-10">
+    <footer className="bg-zinc-900 mt-20 px-10">
+      <section className="max-w-screen-2xl mx-auto ">
         <article className="md:flex md:items-start md:gap-7 md:flex-wrap lg:justify-between lg:gap-4 py-16 ">
           <div className="md:max-w-xl">
             <h1 className="font-sans text-3xl text-white font-bold tracking-wide uppercase mb-8">
@@ -72,11 +72,11 @@ function Footer() {
         </article>
         <div className="border-b-2 border-b-gray-400 w-full mb-8"></div>
         <div className="md:flex md:items-center md:justify-between w-full ">
-          <p className="text-slate-100 mb-8">
+          <p className="text-slate-100 md:mb-8">
             Copyright © {new Date().getFullYear()}. Quickeat. All rights
             reserved.
           </p>
-          <div className="text-slate-100 mb-8">
+          <div className="text-slate-100 md:mb-8">
             <span>Privacy Policy </span>
             <span>Terms & Services</span>
           </div>

@@ -3,7 +3,7 @@ import subscribe from "../asserts/subscribe.png";
 import Button from "./Button";
 function Subscribe() {
   return (
-    <section className="max-w-screen-2xl mx-auto mt-20 px-12 lg:flex lg:items-center lg:gap-8">
+    <section className="max-w-screen-2xl mx-auto mt-20 px-12 lg:flex lg:items-center lg:gap-8 h-full">
       <div>
         <img src={subscribe} alt="subscribe" className="block mx-auto" />
       </div>
@@ -12,12 +12,12 @@ function Subscribe() {
           Get the menu of your favorite restaurants every day
         </h1>
 
-        <div className="mt-10 flex items-center relative">
+        <div className="mt-10 flex items-center relative max-w-lg">
           <BiBell className="absolute top-1/2 translate-y-[-50%] left-3 text-gray-400 text-xl" />
           <input
             type="text"
             placeholder="Enter Email Address"
-            className="text-xl py-4 px-10 shadow-xl placeholder:text-gray-400 placeholder:text-xl focus:outline-none focus:ring focus:ring-yellow-500"
+            className="text-xl py-4 px-10  shadow-xl placeholder:text-gray-400 placeholder:text-xl focus:outline-none focus:ring focus:ring-yellow-500"
           />
           <Button name="Subscribe" />
         </div>

@@ -32,7 +32,7 @@ function NavBar() {
         <input
           type="text"
           placeholder="Search Order #1246"
-          className="p-2 border text-slate-400 border-orange-300 rounded-lg focus:outline-none focus:ring focus:ring-primary focus:ring-offset-2"
+          className="p-2 border text-slate-400 w-56 border-orange-300 rounded-lg focus:outline-none focus:ring focus:ring-primary focus:ring-offset-2"
         />
       </div>
       <aside
