@@ -4,7 +4,7 @@ import { useState } from "react";
 function NavBar() {
   const [showSideBar, setShowSideBar] = useState(false);
   return (
-    <nav className="md:flex md:items-center md:justify-between md:max-w-screen-2xl md:mx-auto px-10  py-3 md:px-2">
+    <nav className="md:flex md:items-center md:justify-between max-w-screen-2xl md:mx-auto px-12  py-3">
       <div className="flex items-center justify-between p-4 md:p-0">
         <h1 className="font-sans text-3xl font-bold tracking-wide uppercase">
           quick<span className="text-primary">eat</span>
@@ -32,7 +32,7 @@ function NavBar() {
         <input
           type="text"
           placeholder="Search Order #1246"
-          className="p-2 border-2 text-slate-400 border-orange-300 rounded-lg focus:outline-none focus:ring focus:ring-primary focus:ring-offset-2"
+          className="p-2 border text-slate-400 border-orange-300 rounded-lg focus:outline-none focus:ring focus:ring-primary focus:ring-offset-2"
         />
       </div>
       <aside

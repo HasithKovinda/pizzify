@@ -5,7 +5,7 @@ function Favorite() {
   return (
     <section
       className="md:flex md:items-center md:justify-between mt-20 
-     mx-auto w-full text-center px-14 md:max-w-screen-2xl "
+     mx-auto w-full text-center px-12 max-w-screen-2xl "
     >
       <div className="xl:relative">
         <img

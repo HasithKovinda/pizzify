@@ -8,7 +8,7 @@ function SingleRestaurant({
   content,
 }: restaurantType) {
   return (
-    <article className="flex items-start gap-5 mt-4 md:max-w-md lg:max-w-md 2xl:max-w-2xl">
+    <article className="flex items-start gap-5 mt-4 w-full md:max-w-md xl:max-w-xl">
       <img
         src={image}
         alt="logo one"
@@ -35,7 +35,7 @@ function SingleRestaurant({
             <BiSolidStar key={i} className="text-primary inline" />
           ))}
         </div>
-        <p className="text-lightGray">{content}</p>
+        <p className="text-lightGray text-sm xl:text-xl">{content}</p>
       </div>
     </article>
   );

@@ -5,7 +5,7 @@ import SingleEvent from "./SingleEvent";
 
 function Events() {
   return (
-    <section className="md:max-w-screen-2xl mx-auto mt-20 px-14">
+    <section className="max-w-screen-2xl mx-auto mt-20 px-14">
       <h1 className="heading capitalize">Our Latest news and events</h1>
       <main className="xl:flex xl:items-start xl:gap-6 mt-10 ">
         <article className="p-8 rounded-xl shadow-xl max-w-3xl mx-auto">
