@@ -1,4 +1,5 @@
 import hero from "../asserts/hero.png";
+import Button from "../components/Button";
 
 function Hero() {
   return (
@@ -7,14 +8,12 @@ function Hero() {
         <h1 className="text-gray-800 text-6xl uppercase font-extrabold leading-snug">
           The Best Restaurants In Your Home
         </h1>
-        <p className="text-slate-500 mt-5">
+        <p className="text-slate-500 mt-5 mb-8">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla,
           aliquam cumque? Accusamus dicta commodi eveniet quo expedita cumque
           sed eum.
         </p>
-        <button className=" text-2xl btn text-white tracking-wide uppercase border border-primary py-4 px-6 mt-5 block rounded-lg hover:text-primary shadow-xl">
-          order now
-        </button>
+        <Button name="order now" />
       </div>
       <img
         src={hero}

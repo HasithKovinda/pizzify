@@ -1,5 +1,6 @@
 import { BiCookie } from "react-icons/bi";
 import favorite from "../asserts/fourite.png";
+import Button from "./Button";
 
 function Favorite() {
   return (
@@ -18,18 +19,16 @@ function Favorite() {
           <span className="text-primary">Pizza</span>
         </div>
       </div>
-      <div className="max-w-sm xl:max-w-xl mx-auto">
+      <div className="max-w-sm xl:max-w-xl mx-auto md:flex md:flex-col md:items-start">
         <h1 className="heading  text-4xl md:text-left lg:text-6xl">
           Food from your favorite restaurants to your table
         </h1>
-        <p className="text-lightGray text-center md:text-left text-2xl">
+        <p className="text-lightGray text-center md:text-left text-2xl mb-5">
           Pretium lectus quam id leo in vitae turpis massa sed. Lorem donec
           massa sapien faucibus et molestie. Vitae elementum curabitur vitae
           nunc.
         </p>
-        <button className=" text-2xl btn text-white mx-auto md:m-0 md:mt-5 tracking-wide uppercase border border-primary py-4 px-6 mt-5 block rounded-lg hover:text-primary shadow-xl">
-          order now
-        </button>
+        <Button name="order now" />
       </div>
     </section>
   );
