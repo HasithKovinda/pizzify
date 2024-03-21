@@ -1,5 +1,3 @@
-import { useInView } from "framer-motion";
-import { useRef, useEffect } from "react";
 import { restaurantData } from "../data/data";
 import SingleRestaurant from "./SingleRestaurant";
 
