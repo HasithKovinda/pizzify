@@ -2,10 +2,11 @@ import { BiGroup, BiCalendar, BiHide } from "react-icons/bi";
 import team from "../asserts/team.jpg";
 import { serviceData } from "../data/data";
 import SingleEvent from "./SingleEvent";
+import RotateAnimation from "./Animations/RotateAnimation";
 
 function Events() {
   return (
-    <section className="max-w-screen-2xl mx-auto mt-20 px-14">
+    <RotateAnimation classNames="max-w-screen-2xl mx-auto mt-20 px-14">
       <h1 className="heading capitalize">Our Latest news and events</h1>
       <main className="xl:flex xl:items-start xl:gap-6 mt-10 ">
         <article className="p-8 rounded-xl shadow-xl max-w-3xl mx-auto">
@@ -42,6 +43,7 @@ function Events() {
             </div>
           </div>
         </article>
+
         <article className="md:space-y-16 max-w-3xl mx-auto mt-8">
           {serviceData.map((data, index) => {
             return (
@@ -50,7 +52,7 @@ function Events() {
           })}
         </article>
       </main>
-    </section>
+    </RotateAnimation>
   );
 }
 

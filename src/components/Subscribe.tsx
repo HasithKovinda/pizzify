@@ -1,9 +1,10 @@
 import { BiBell } from "react-icons/bi";
 import subscribe from "../asserts/subscribe.png";
 import Button from "./Button";
+import RotateAnimation from "./Animations/RotateAnimation";
 function Subscribe() {
   return (
-    <section className="max-w-screen-2xl mx-auto mt-20 px-12 lg:flex lg:items-center lg:gap-8 h-full">
+    <RotateAnimation classNames="max-w-screen-2xl mx-auto mt-20 px-12 lg:flex lg:items-center lg:gap-8 h-full">
       <div>
         <img src={subscribe} alt="subscribe" className="block mx-auto" />
       </div>
@@ -22,7 +23,7 @@ function Subscribe() {
           <Button name="Subscribe" />
         </div>
       </div>
-    </section>
+    </RotateAnimation>
   );
 }
 

@@ -9,7 +9,7 @@ function FloatAnimation({
   classNames?: string;
 }) {
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { once: true });
   const animation = useAnimation();
 
   useEffect(() => {
