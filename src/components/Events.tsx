@@ -2,11 +2,31 @@ import { BiGroup, BiCalendar, BiHide } from "react-icons/bi";
 import team from "../asserts/team.jpg";
 import { serviceData } from "../data/data";
 import SingleEvent from "./SingleEvent";
-import RotateAnimation from "./Animations/RotateAnimation";
+import { useInView, useAnimation, motion } from "framer-motion";
+import { useRef, useEffect } from "react";
 
 function Events() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const animation = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      animation.start("visible");
+    }
+  }, [isInView]);
   return (
-    <RotateAnimation classNames="max-w-screen-2xl mx-auto mt-20 px-14">
+    <motion.section
+      className="max-w-screen-2xl mx-auto mt-20 px-14"
+      ref={ref}
+      variants={{
+        hidden: { opacity: 0, x: "-100%" },
+        visible: { opacity: 1, x: 0 },
+      }}
+      initial="hidden"
+      animate={animation}
+      transition={{ duration: 2 }}
+    >
       <h1 className="heading capitalize">Our Latest news and events</h1>
       <main className="xl:flex xl:items-start xl:gap-6 mt-10 ">
         <article className="p-8 rounded-xl shadow-xl max-w-3xl mx-auto">
@@ -52,7 +72,7 @@ function Events() {
           })}
         </article>
       </main>
-    </RotateAnimation>
+    </motion.section>
   );
 }
 
