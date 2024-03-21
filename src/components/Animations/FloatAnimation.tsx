@@ -1,7 +1,13 @@
 import { useInView, useAnimation, motion } from "framer-motion";
 import { ReactNode, useEffect, useRef } from "react";
 
-function FloatAnimation({ children }: { children: ReactNode }) {
+function FloatAnimation({
+  children,
+  classNames,
+}: {
+  children: ReactNode;
+  classNames?: string;
+}) {
   const ref = useRef(null);
   const isInView = useInView(ref);
   const animation = useAnimation();
@@ -13,6 +19,7 @@ function FloatAnimation({ children }: { children: ReactNode }) {
   }, [isInView]);
   return (
     <motion.section
+      className={classNames}
       ref={ref}
       variants={{
         hidden: { opacity: 0, y: 100 },

@@ -27,7 +27,7 @@ function RotateAnimation({
       }}
       initial="hidden"
       animate={animation}
-      transition={{ duration: 2 }}
+      transition={{ duration: 0.7 }}
     >
       {children}
     </motion.section>
