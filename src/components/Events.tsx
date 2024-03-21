@@ -43,8 +43,10 @@ function Events() {
           </div>
         </article>
         <article className="md:space-y-16 max-w-3xl mx-auto mt-8">
-          {serviceData.map((data) => {
-            return <SingleEvent image={data.image} title={data.title} />;
+          {serviceData.map((data, index) => {
+            return (
+              <SingleEvent image={data.image} title={data.title} key={index} />
+            );
           })}
         </article>
       </main>
