@@ -1,6 +1,8 @@
+import RotateAnimation from "./Animations/RotateAnimation";
+
 function Service() {
   return (
-    <section className="max-w-screen-2xl mx-auto mt-20 px-14 ">
+    <RotateAnimation classNames="max-w-screen-2xl mx-auto mt-20 px-14 ">
       <h1 className="text-gray-800 text-4xl font-bold text-center mb-5 capitalize">
         Service shows good taste
       </h1>
@@ -18,7 +20,7 @@ function Service() {
           <span className="text-2xl text-lightGray">Food Delivered</span>
         </div>
       </article>
-    </section>
+    </RotateAnimation>
   );
 }
 
