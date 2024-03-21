@@ -1,19 +1,8 @@
-// import { useInView, motion, useAnimation } from "framer-motion";
-// import { useRef, useEffect } from "react";
 import hero from "../asserts/hero.png";
 import FloatAnimation from "../components/Animations/FloatAnimation";
 import Button from "../components/Button";
 
 function Hero() {
-  // const ref = useRef(null);
-  // const isInView = useInView(ref);
-  // const animation = useAnimation();
-
-  // useEffect(() => {
-  //   if (isInView) {
-  //     animation.start("visible");
-  //   }
-  // }, [isInView]);
   return (
     <FloatAnimation>
       <div className="max-w-screen-2xl px-12 md:flex md:items-center md:justify-between mx-auto">
