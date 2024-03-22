@@ -11,7 +11,6 @@ import Works from "./Home/Works";
 function Home() {
   return (
     <>
-      <NavBar />
       <Hero />
       <Works />
       <Restaurants />
@@ -19,7 +18,6 @@ function Home() {
       <Service />
       <Events />
       <Subscribe />
-      <Footer />
     </>
   );
 }
