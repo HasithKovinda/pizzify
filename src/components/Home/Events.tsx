@@ -1,6 +1,6 @@
 import { BiGroup, BiCalendar, BiHide } from "react-icons/bi";
-import team from "../asserts/team.jpg";
-import { serviceData } from "../data/data";
+import team from "../../asserts/team.jpg";
+import { serviceData } from "../../data/data";
 import SingleEvent from "./SingleEvent";
 import { useInView, useAnimation, motion } from "framer-motion";
 import { useRef, useEffect } from "react";

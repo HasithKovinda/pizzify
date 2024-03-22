@@ -1,27 +1,35 @@
-import Hero from "./UI/Hero";
-import NavBar from "./UI/NavBar";
-import Works from "./UI/Works";
-import Events from "./components/Events";
-import Favorite from "./components/Favorite";
-import Footer from "./components/Footer";
-import Restaurants from "./components/Restaurants";
-import Service from "./components/Service";
-import Subscribe from "./components/Subscribe";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./components/Home";
+import Menu from "./features/menu/Menu";
+import Cart from "./features/cart/Cart";
+import Order from "./features/order/Order";
+import CreateOrder from "./features/order/CreateOrder";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/menu",
+    element: <Menu />,
+  },
+  {
+    path: "/cart",
+    element: <Cart />,
+  },
+  {
+    path: "/order/new",
+    element: <CreateOrder />,
+  },
+  {
+    path: "/order/:orderId",
+    element: <Order />,
+  },
+]);
 
 function App() {
-  return (
-    <>
-      <NavBar />
-      <Hero />
-      <Works />
-      <Restaurants />
-      <Favorite />
-      <Service />
-      <Events />
-      <Subscribe />
-      <Footer />
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

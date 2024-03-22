@@ -1,5 +1,5 @@
 import { BiMenu, BiXCircle } from "react-icons/bi";
-import Link from "../components/Link";
+import Link from "./Link";
 import { useState } from "react";
 function NavBar() {
   const [showSideBar, setShowSideBar] = useState(false);

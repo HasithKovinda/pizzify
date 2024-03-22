@@ -1,7 +1,7 @@
 import { BiCookie } from "react-icons/bi";
-import favorite from "../asserts/fourite.png";
-import Button from "./Button";
-import FloatAnimation from "./Animations/FloatAnimation";
+import favorite from "../../asserts/fourite.png";
+import Button from "../Button";
+import FloatAnimation from "../Animations/FloatAnimation";
 
 function Favorite() {
   return (

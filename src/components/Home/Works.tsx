@@ -1,7 +1,7 @@
 import { useInView, motion, useAnimation } from "framer-motion";
 import { useRef, useEffect } from "react";
-import Feature from "../components/Feature";
-import { features } from "../data/data";
+import Feature from "./Feature";
+import { features } from "../../data/data";
 
 function Works() {
   const ref = useRef(null);

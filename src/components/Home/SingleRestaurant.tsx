@@ -1,5 +1,5 @@
 import { BiSolidStar } from "react-icons/bi";
-import { restaurantType } from "../data/data";
+import { restaurantType } from "../../data/data";
 
 function SingleRestaurant({
   title,

@@ -1,7 +1,7 @@
 import { BiBell } from "react-icons/bi";
-import subscribe from "../asserts/subscribe.png";
-import Button from "./Button";
-import RotateAnimation from "./Animations/RotateAnimation";
+import subscribe from "../../asserts/subscribe.png";
+import Button from "../Button";
+import RotateAnimation from "../Animations/RotateAnimation";
 function Subscribe() {
   return (
     <RotateAnimation classNames="max-w-screen-2xl mx-auto mt-20 px-12 lg:flex lg:items-center lg:gap-8 h-full">

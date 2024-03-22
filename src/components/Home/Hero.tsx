@@ -1,6 +1,6 @@
-import hero from "../asserts/hero.png";
-import FloatAnimation from "../components/Animations/FloatAnimation";
-import Button from "../components/Button";
+import hero from "../../asserts/hero.png";
+import FloatAnimation from "../Animations/FloatAnimation";
+import Button from "../Button";
 
 function Hero() {
   return (

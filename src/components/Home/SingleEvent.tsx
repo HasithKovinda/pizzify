@@ -1,5 +1,5 @@
 import { BiGroup, BiCalendar, BiHide } from "react-icons/bi";
-import { type serviceType } from "../data/data";
+import { type serviceType } from "../../data/data";
 
 function SingleEvent({ title, image }: serviceType) {
   return (

@@ -1,5 +1,5 @@
-import { type featuresType } from "../data/data";
-import RotateAnimation from "./Animations/RotateAnimation";
+import { type featuresType } from "../../data/data";
+import RotateAnimation from "../Animations/RotateAnimation";
 
 function Feature({ image, title, featureNumber, content }: featuresType) {
   return (

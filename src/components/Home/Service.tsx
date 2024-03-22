@@ -1,4 +1,4 @@
-import RotateAnimation from "./Animations/RotateAnimation";
+import RotateAnimation from "../Animations/RotateAnimation";
 
 function Service() {
   return (
