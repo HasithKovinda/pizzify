@@ -4,7 +4,6 @@ import { MenuType } from "../../types/pizza";
 
 function Menu() {
   const data = useLoaderData<MenuType[]>();
-  console.log("🚀 ~ Menu ~ data:", data);
   return <div>Menu</div>;
 }
 

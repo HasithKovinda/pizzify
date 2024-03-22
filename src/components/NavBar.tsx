@@ -1,5 +1,6 @@
 import { BiMenu, BiXCircle } from "react-icons/bi";
 import Link from "./Link";
+import { Link as RouterLink } from "react-router-dom";
 import { useState } from "react";
 function NavBar() {
   const [showSideBar, setShowSideBar] = useState(false);
@@ -19,7 +20,8 @@ function NavBar() {
           <a href="#">Home</a>
         </li>
         <li className="hover:text-primary transition-all">
-          <a href="#">About</a>
+          <RouterLink to="menu">Menu</RouterLink>
+          {/* <a href="#">About</a> */}
         </li>
         <li className="hover:text-primary transition-all">
           <a href="#">Contact</a>
@@ -49,16 +51,16 @@ function NavBar() {
         </div>
         <ul className="flex flex-col  px-4">
           <li>
-            <Link name="Home" />
+            <Link name="Home" to="/" />
           </li>
           <li>
-            <Link name="About" />
+            <Link name="About" to="about" />
           </li>
           <li>
-            <Link name="Contact" />
+            <Link name="Contact" to="contact" />
           </li>
           <li>
-            <Link name="Order" />
+            <Link name="Order" to="order" />
           </li>
         </ul>
       </aside>
