@@ -2,6 +2,7 @@ import { BiMenu, BiXCircle } from "react-icons/bi";
 import Link from "./Link";
 import { Link as RouterLink } from "react-router-dom";
 import { useState } from "react";
+import SearchOrder from "../features/order/SearchOrder";
 function NavBar() {
   const [showSideBar, setShowSideBar] = useState(false);
   return (
@@ -30,13 +31,7 @@ function NavBar() {
           <a href="#">Order</a>
         </li>
       </ul>
-      <div className="hidden md:block">
-        <input
-          type="text"
-          placeholder="Search Order #1246"
-          className="p-2 border text-slate-400 w-56 border-orange-300 rounded-lg focus:outline-none focus:ring focus:ring-primary focus:ring-offset-2"
-        />
-      </div>
+      <SearchOrder />
       <aside
         className={`min-h-screen w-full fixed top-0 left-0 bg-slate-100 ${showSideBar ? "translate-x-0" : "translate-x-[-100%]"} ease-linear transition-all duration-300`}
       >
