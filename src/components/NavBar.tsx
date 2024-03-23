@@ -43,7 +43,9 @@ function NavBar() {
       </ul>
       <div className="flex items-center text-zinc-600 gap-2">
         <SearchOrder />
-        <span className="text-2xl font-semibold capitalize">{userName}</span>
+        {userName && (
+          <span className="text-2xl font-semibold capitalize">{userName}</span>
+        )}
       </div>
       <aside
         className={`min-h-screen w-full fixed top-0 left-0 bg-slate-100 ${showSideBar ? "translate-x-0" : "translate-x-[-100%]"} ease-linear transition-all duration-300`}

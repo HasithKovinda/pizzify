@@ -1,5 +1,11 @@
+import { useSelector } from "react-redux";
 import { type MenuType } from "../../types/pizza";
 import { formatCurrency } from "../../utils/helpers";
+import useUserSelector from "../../hooks/useUserSelector";
+
+type MenuItemProps = {
+  handleModelOpen: () => void;
+} & MenuType;
 
 function MenuItem({
   name,
@@ -7,7 +13,16 @@ function MenuItem({
   ingredients,
   soldOut,
   unitPrice,
-}: MenuType) {
+  handleModelOpen,
+}: MenuItemProps) {
+  const userName = useUserSelector((state) => state.user.userName);
+
+  function handleAddCart() {
+    if (!userName) {
+      handleModelOpen();
+      return;
+    }
+  }
   return (
     <div className="flex items-start gap-3">
       <img
@@ -28,7 +43,10 @@ function MenuItem({
         {soldOut ? (
           <p className="uppercase text-slate-400 text-2xl">sold out</p>
         ) : (
-          <button className="btn px-2 py-2 text-white rounded-xl w-32">
+          <button
+            className="btn px-2 py-2 text-white border border-primary rounded-xl w-32 hover:text-primary hover:border-primary"
+            onClick={handleAddCart}
+          >
             Add to Cart
           </button>
         )}

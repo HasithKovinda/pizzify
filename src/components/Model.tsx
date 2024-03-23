@@ -1,12 +1,15 @@
 import { createPortal } from "react-dom";
 import { FiX } from "react-icons/fi";
 
-function Model() {
+function Model({ handleClose }: { handleClose: () => void }) {
   return createPortal(
     <div className="fixed top-0 left-0 h-full w-full bg-stone-900/60 z-50 flex items-center justify-center">
       <div className=" bg-slate-100 p-6 rounded-xl shadow-2xl max-w-xl">
         <div className="flex justify-end mb-3">
-          <FiX className="text-2xl text-red-600 cursor-pointer hover:text-red-700 transition-colors duration-200" />
+          <FiX
+            className="text-2xl text-red-600 cursor-pointer hover:text-red-700 transition-colors duration-200"
+            onClick={handleClose}
+          />
         </div>
         <h1 className="text-3xl font-semibold mb-3">
           User Information Required
