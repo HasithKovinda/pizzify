@@ -1,7 +1,20 @@
+import { useState } from "react";
 import { createPortal } from "react-dom";
 import { FiX } from "react-icons/fi";
+import useUserDispatch from "../hooks/useUserDispatch";
+import { updateName } from "../features/user/userSlice";
 
 function Model({ handleClose }: { handleClose: () => void }) {
+  const [name, setName] = useState("");
+  const dispatch = useUserDispatch();
+
+  function handleSubmit() {
+    if (!name) return;
+    dispatch(updateName({ userName: name }));
+    handleClose();
+    setName("");
+  }
+
   return createPortal(
     <div className="fixed top-0 left-0 h-full w-full bg-stone-900/60 z-50 flex items-center justify-center">
       <div className=" bg-slate-100 p-6 rounded-xl shadow-2xl max-w-xl">
@@ -22,9 +35,14 @@ function Model({ handleClose }: { handleClose: () => void }) {
           type="text"
           placeholder="Enter Your User Name"
           className="w-full p-3 outline-none focus:outline-primary"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
         <div className="mt-5 flex justify-center">
-          <button className="btn py-2 px-3 text-white rounded-lg border hover:text-primary hover:border hover:border-primary">
+          <button
+            className="btn py-2 px-3 text-white rounded-lg border hover:text-primary hover:border hover:border-primary"
+            onClick={handleSubmit}
+          >
             Submit Information
           </button>
         </div>

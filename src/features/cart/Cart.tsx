@@ -1,3 +1,4 @@
+import useUserSelector from "../../hooks/useUserSelector";
 import CartItem from "./CartItem";
 
 function Cart() {
@@ -24,15 +25,14 @@ function Cart() {
       totalPrice: 15,
     },
   ];
+  const name = useUserSelector((state) => state.user.userName);
   return (
     <section className="px-12">
       <div className="max-w-2xl mx-auto">
         <button className="text-primary text-xl mb-5">
           &larr; Back to menu
         </button>
-        <h2 className="font-semibold text-2xl mb-5">
-          Your Cart Hasith Kovinda
-        </h2>
+        <h2 className="font-semibold text-2xl mb-5">Your Cart {name}</h2>
         <article className="flex flex-col gap-4 divide-y divide-orange-400">
           {fakeCart.map((cart) => {
             return <CartItem {...cart} key={cart.name} />;
