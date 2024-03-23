@@ -10,7 +10,7 @@ function AppLayout() {
 
   return (
     <>
-      <Model />
+      {/* <Model /> */}
       {isLoading && <Loading />}
       <NavBar />
       <Outlet />

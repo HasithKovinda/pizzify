@@ -1,7 +1,8 @@
+import { createPortal } from "react-dom";
 import { FiX } from "react-icons/fi";
 
 function Model() {
-  return (
+  return createPortal(
     <div className="fixed top-0 left-0 h-full w-full bg-stone-900/60 z-50 flex items-center justify-center">
       <div className=" bg-slate-100 p-6 rounded-xl shadow-2xl max-w-xl">
         <div className="flex justify-end mb-3">
@@ -25,7 +26,8 @@ function Model() {
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
