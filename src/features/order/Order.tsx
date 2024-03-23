@@ -1,7 +1,11 @@
-import { Params } from "react-router-dom";
+import { type Params } from "react-router-dom";
 import { getOrder } from "../../services/apiRestaurant";
+import useLoaderData from "../../hooks/useDataLoader";
+import { OrderType } from "../../types/pizza";
 
 function Order() {
+  const order = useLoaderData<OrderType>();
+  console.log("🚀 ~ Order ~ order:", order);
   return <div>Order</div>;
 }
 
