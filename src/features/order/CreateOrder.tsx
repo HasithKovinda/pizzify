@@ -1,4 +1,4 @@
-import { Form, redirect, useActionData, useNavigation } from "react-router-dom";
+import { Form, redirect, useNavigation } from "react-router-dom";
 import { type Cart, type NewOrder } from "../../types/pizza";
 import { createOrder } from "../../services/apiRestaurant";
 import useFormErrors from "../../hooks/useFormErrors";
@@ -41,35 +41,38 @@ function CreateOrder() {
   const cart = fakeCart;
 
   return (
-    <div>
-      <h2>Ready to order? Let's go!</h2>
+    <div className="max-w-2xl mx-auto px-12 mt-10">
+      <h2 className="text-2xl font-semibold text-zinc-500 mb-5">
+        Ready to order? Let's go!
+      </h2>
 
-      <Form method="POST">
+      <Form method="POST" className="space-y-5">
         <div>
-          <label>First Name</label>
-          <input type="text" name="customer" required />
+          <label className="label">First Name</label>
+          <input type="text" name="customer" className="input" required />
         </div>
 
         <div>
-          <label>Phone number</label>
+          <label className="label">Phone number</label>
           <div>
-            <input type="tel" name="phone" required />
+            <input type="tel" name="phone" className="input" required />
           </div>
           <span> {formErrors?.phone && formErrors.phone}</span>
         </div>
 
         <div>
-          <label>Address</label>
+          <label className="label">Address</label>
           <div>
-            <input type="text" name="address" required />
+            <input type="text" name="address" className="input" required />
           </div>
         </div>
 
-        <div>
+        <div className="flex items-start gap-2">
           <input
             type="checkbox"
             name="priority"
             id="priority"
+            className="h-6 w-6 accent-primary focus:outline-none focus:ring focus:ring-orange-400 focus:ring-offset-2"
             // value={withPriority}
             // onChange={(e) => setWithPriority(e.target.checked)}
           />
@@ -77,7 +80,10 @@ function CreateOrder() {
         </div>
 
         <div>
-          <button disabled={isSubmitting}>
+          <button
+            className="btn px-2 py-3 text-xl text-white rounded-lg"
+            disabled={isSubmitting}
+          >
             {isSubmitting ? "Placing Order...." : "Order now"}{" "}
           </button>
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
