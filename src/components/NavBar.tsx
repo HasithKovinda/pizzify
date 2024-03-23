@@ -7,7 +7,7 @@ function NavBar() {
   const [showSideBar, setShowSideBar] = useState(false);
   return (
     <nav className="md:flex md:items-center md:justify-between max-w-screen-2xl md:mx-auto px-12  py-3">
-      <div className="flex items-center justify-between p-4 md:p-0">
+      <div className="flex items-center justify-between py-4 md:p-0">
         <h1 className="font-sans text-3xl font-bold tracking-wide uppercase">
           quick<span className="text-primary">eat</span>
         </h1>
@@ -31,7 +31,12 @@ function NavBar() {
           <a href="#">Order</a>
         </li>
       </ul>
-      <SearchOrder />
+      <div className="flex items-center text-zinc-600 gap-2">
+        <SearchOrder />
+        {/* <span className="text-2xl font-semibold capitalize">
+          Hasith Kovinda
+        </span> */}
+      </div>
       <aside
         className={`min-h-screen w-full fixed top-0 left-0 bg-slate-100 ${showSideBar ? "translate-x-0" : "translate-x-[-100%]"} ease-linear transition-all duration-300`}
       >
