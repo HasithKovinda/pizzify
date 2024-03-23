@@ -2,6 +2,7 @@ import { Outlet, useNavigation } from "react-router-dom";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import Loading from "./Loading";
+import Model from "./Model";
 
 function AppLayout() {
   const navigation = useNavigation();
@@ -9,6 +10,7 @@ function AppLayout() {
 
   return (
     <>
+      <Model />
       {isLoading && <Loading />}
       <NavBar />
       <Outlet />
