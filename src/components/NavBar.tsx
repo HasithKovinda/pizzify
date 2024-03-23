@@ -3,8 +3,10 @@ import { BiMenu, BiXCircle, BiCart } from "react-icons/bi";
 import Link from "./Link";
 import { Link as RouterLink } from "react-router-dom";
 import SearchOrder from "../features/order/SearchOrder";
-import { formatCurrency } from "../utils/helpers";
+import useUserSelector from "../hooks/useUserSelector";
+
 function NavBar() {
+  const userName = useUserSelector((state) => state.user.userName);
   const [showSideBar, setShowSideBar] = useState(false);
   return (
     <nav className="md:flex md:items-center md:justify-between max-w-screen-2xl md:mx-auto px-12  py-3">
@@ -41,9 +43,7 @@ function NavBar() {
       </ul>
       <div className="flex items-center text-zinc-600 gap-2">
         <SearchOrder />
-        {/* <span className="text-2xl font-semibold capitalize">
-          Hasith Kovinda
-        </span> */}
+        <span className="text-2xl font-semibold capitalize">{userName}</span>
       </div>
       <aside
         className={`min-h-screen w-full fixed top-0 left-0 bg-slate-100 ${showSideBar ? "translate-x-0" : "translate-x-[-100%]"} ease-linear transition-all duration-300`}
