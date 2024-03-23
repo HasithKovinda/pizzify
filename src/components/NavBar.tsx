@@ -1,8 +1,9 @@
-import { BiMenu, BiXCircle } from "react-icons/bi";
+import { useState } from "react";
+import { BiMenu, BiXCircle, BiCart } from "react-icons/bi";
 import Link from "./Link";
 import { Link as RouterLink } from "react-router-dom";
-import { useState } from "react";
 import SearchOrder from "../features/order/SearchOrder";
+import { formatCurrency } from "../utils/helpers";
 function NavBar() {
   const [showSideBar, setShowSideBar] = useState(false);
   return (
@@ -25,10 +26,17 @@ function NavBar() {
           {/* <a href="#">About</a> */}
         </li>
         <li className="hover:text-primary transition-all">
-          <a href="#">Contact</a>
+          <a href="#" className="py-1">
+            Contact
+          </a>
         </li>
         <li className="hover:text-primary transition-all">
-          <a href="#">Order</a>
+          <a href="#" className=" flex text-primary gap-3">
+            <span>Cart</span>
+            <BiCart className="text-2xl" />
+            <span>01</span>
+            {/* <span>{formatCurrency(30)}</span> */}
+          </a>
         </li>
       </ul>
       <div className="flex items-center text-zinc-600 gap-2">
