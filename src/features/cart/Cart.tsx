@@ -1,31 +1,9 @@
-import useUserSelector from "../../hooks/useAppSelector";
+import useAppSelector from "../../hooks/useAppSelector";
 import CartItem from "./CartItem";
 
 function Cart() {
-  const fakeCart = [
-    {
-      pizzaId: 12,
-      name: "Mediterranean",
-      quantity: 2,
-      unitPrice: 16,
-      totalPrice: 32,
-    },
-    {
-      pizzaId: 6,
-      name: "Vegetale",
-      quantity: 1,
-      unitPrice: 13,
-      totalPrice: 13,
-    },
-    {
-      pizzaId: 11,
-      name: "Spinach and Mushroom",
-      quantity: 1,
-      unitPrice: 15,
-      totalPrice: 15,
-    },
-  ];
-  const name = useUserSelector((state) => state.user.userName);
+  const name = useAppSelector((state) => state.user.userName);
+  const cart = useAppSelector((state) => state.cart.cart);
   return (
     <section className="px-12">
       <div className="max-w-2xl mx-auto">
@@ -34,7 +12,7 @@ function Cart() {
         </button>
         <h2 className="font-semibold text-2xl mb-5">Your Cart {name}</h2>
         <article className="flex flex-col gap-4 divide-y divide-orange-400">
-          {fakeCart.map((cart) => {
+          {cart.map((cart) => {
             return <CartItem {...cart} key={cart.name} />;
           })}
         </article>

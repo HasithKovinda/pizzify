@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { BiMenu, BiXCircle, BiCart } from "react-icons/bi";
 import Link from "./Link";
-import { Link as RouterLink } from "react-router-dom";
 import SearchOrder from "../features/order/SearchOrder";
 import useAppSelector from "../hooks/useAppSelector";
 import { totalCartQuantity } from "../features/cart/cartSlice";
+import NavLink from "./NavLink";
 
 function NavBar() {
   const userName = useAppSelector((state) => state.user.userName);
@@ -24,27 +24,17 @@ function NavBar() {
         />
       </div>
       <ul className="hidden  md:flex md:px-4 md:text-lg md:tracking-widest md:uppercase md:gap-x-2 lg:gap-x-14">
-        <li className="hover:text-primary transition-all">
-          <a href="#">Home</a>
-        </li>
-        <li className="hover:text-primary transition-all">
-          <RouterLink to="menu">Menu</RouterLink>
-          {/* <a href="#">About</a> */}
-        </li>
-        <li className="hover:text-primary transition-all">
-          <a href="#" className="py-1">
-            Contact
-          </a>
-        </li>
+        <NavLink to="/">Home </NavLink>
+        <NavLink to="/menu">Menu </NavLink>
+        <NavLink to="/contact">Contact </NavLink>
+        <NavLink to="/">Home </NavLink>
         {totalQuantity ? (
-          <li className="hover:text-primary transition-all">
-            <a href="#" className=" flex text-primary gap-3">
-              <span>Cart</span>
-              <BiCart className="text-2xl" />
-              <span>{totalQuantity}</span>
-              {/* <span>{formatCurrency(30)}</span> */}
-            </a>
-          </li>
+          <NavLink to="/cart" classNames="flex text-primary gap-3">
+            {" "}
+            <span>Cart</span>
+            <BiCart className="text-2xl" />
+            <span>{totalQuantity}</span>
+          </NavLink>
         ) : null}
       </ul>
       <div className="flex items-center text-zinc-600 gap-2">
