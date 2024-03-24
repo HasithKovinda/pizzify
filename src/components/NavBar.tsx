@@ -5,6 +5,7 @@ import useAppSelector from "../hooks/useAppSelector";
 import NavLink from "./NavLink";
 import { totalCartQuantity } from "../features/cart/cartSlice";
 import SideBar from "./Home/SideBar";
+import { AnimatePresence, motion } from "framer-motion";
 
 function NavBar() {
   const userName = useAppSelector((state) => state.user.userName);
@@ -43,15 +44,22 @@ function NavBar() {
           <NavLink to="/contact" classNames="hidden md:block">
             Contact
           </NavLink>
-          {totalQuantity ? (
-            <div className="fixed bottom-4 right-2 py-2 px-3 bg-primary z-40 shadow-xl rounded-lg ">
-              <NavLink to="/cart" classNames="flex  gap-3 text-white">
-                <span>Cart</span>
-                <BiCart className="text-2xl" />
-                <span>{totalQuantity}</span>
-              </NavLink>
-            </div>
-          ) : null}
+          <AnimatePresence>
+            {totalQuantity ? (
+              <motion.div
+                className="fixed bottom-4 right-2 py-2 px-3 bg-primary z-40 shadow-xl rounded-lg "
+                initial={{ opacity: 0, y: "-100%" }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: "-100%" }}
+              >
+                <NavLink to="/cart" classNames="flex  gap-3 text-white">
+                  <span>Cart</span>
+                  <BiCart className="text-2xl" />
+                  <span>{totalQuantity}</span>
+                </NavLink>
+              </motion.div>
+            ) : null}
+          </AnimatePresence>
         </ul>
         <div className="flex items-center text-zinc-600 gap-2">
           <SearchOrder />
@@ -62,7 +70,9 @@ function NavBar() {
           )}
         </div>
         {}
-        {showSideBar && <SideBar closeSideBar={closeSideBar} />}
+        <AnimatePresence>
+          {showSideBar && <SideBar closeSideBar={closeSideBar} />}
+        </AnimatePresence>
       </nav>
     </header>
   );
