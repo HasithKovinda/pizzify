@@ -3,8 +3,8 @@ import { BiMenu, BiXCircle, BiCart } from "react-icons/bi";
 import Link from "./Link";
 import SearchOrder from "../features/order/SearchOrder";
 import useAppSelector from "../hooks/useAppSelector";
-import { totalCartQuantity } from "../features/cart/cartSlice";
 import NavLink from "./NavLink";
+import { totalCartQuantity } from "../features/cart/cartSlice";
 
 function NavBar() {
   const userName = useAppSelector((state) => state.user.userName);
@@ -27,7 +27,6 @@ function NavBar() {
         <NavLink to="/">Home </NavLink>
         <NavLink to="/menu">Menu </NavLink>
         <NavLink to="/contact">Contact </NavLink>
-        <NavLink to="/">Home </NavLink>
         {totalQuantity ? (
           <NavLink to="/cart" classNames="flex text-primary gap-3">
             {" "}

@@ -9,13 +9,13 @@ function AppLayout() {
   const isLoading = navigation.state === "loading";
 
   return (
-    <>
+    <div className="grid min-h-screen grid-rows-[auto_1fr_auto]">
       {/* <Model /> */}
       {isLoading && <Loading />}
       <NavBar />
       <Outlet />
       <Footer />
-    </>
+    </div>
   );
 }
 

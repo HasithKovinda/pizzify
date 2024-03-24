@@ -2,7 +2,8 @@ import { Cart, type MenuType } from "../../types/pizza";
 import { formatCurrency } from "../../utils/helpers";
 import useAppSelector from "../../hooks/useAppSelector";
 import useAppDispatch from "../../hooks/useAppDispatch";
-import { addItem } from "../cart/cartSlice";
+import { addItem, getCurrentQualityById } from "../cart/cartSlice";
+import DeleteItem from "../cart/DeleteItem";
 
 type MenuItemProps = {
   handleModelOpen: () => void;
@@ -34,6 +35,10 @@ function MenuItem({
     };
     dispatch(addItem(newItem));
   }
+  const currentQuantity = useAppSelector((state) =>
+    getCurrentQualityById(id, state.cart.cart)
+  );
+  const isInCart = currentQuantity > 0;
   return (
     <div className="flex items-start gap-3">
       <img
@@ -51,8 +56,11 @@ function MenuItem({
           </div>
           <p className="text-3xl text-primary">{formatCurrency(unitPrice)}</p>
         </div>
+
         {soldOut ? (
           <p className="uppercase text-slate-400 text-2xl">sold out</p>
+        ) : isInCart ? (
+          <DeleteItem pizzaId={id} />
         ) : (
           <button
             className="btn px-2 py-2 text-white border border-primary rounded-xl w-32 hover:text-primary hover:border-primary"

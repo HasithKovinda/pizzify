@@ -1,8 +1,9 @@
 import { Cart } from "../../types/pizza";
 import { formatCurrency } from "../../utils/helpers";
+import DeleteItem from "./DeleteItem";
 
 function CartItem(cart: Cart) {
-  const { name, quantity, totalPrice } = cart;
+  const { pizzaId, name, quantity, totalPrice } = cart;
   return (
     <div className="flex items-center justify-between py-4">
       <div className="tracking-wide">
@@ -12,9 +13,7 @@ function CartItem(cart: Cart) {
       </div>
       <div className="space-x-2">
         <span className="font-semibold">{formatCurrency(totalPrice)}</span>
-        <span className="text-primary cursor-pointer tracking-wide">
-          Remove
-        </span>
+        <DeleteItem pizzaId={pizzaId} size="large" />
       </div>
     </div>
   );

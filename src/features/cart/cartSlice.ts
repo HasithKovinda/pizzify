@@ -58,3 +58,7 @@ export function totalCartQuantity(cart: Cart[]) {
 export function totalCartPrice(cart: Cart[]) {
   return cart.reduce((sum, item) => item.unitPrice + sum, 0);
 }
+
+export function getCurrentQualityById(id: number, state: Cart[]) {
+  return state.find((item) => item.pizzaId === id)?.quantity ?? 0;
+}
