@@ -4,6 +4,6 @@ import { type AppDispatch } from "../store";
 
 type DispatchFunction = () => AppDispatch;
 
-const useUserDispatch: DispatchFunction = useDispatch;
+const useAppDispatch: DispatchFunction = useDispatch;
 
-export default useUserDispatch;
+export default useAppDispatch;

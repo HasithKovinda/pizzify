@@ -2,7 +2,7 @@ import { Form, redirect, useNavigation } from "react-router-dom";
 import { type Cart, type NewOrder } from "../../types/pizza";
 import { createOrder } from "../../services/apiRestaurant";
 import useFormErrors from "../../hooks/useFormErrors";
-import useUserSelector from "../../hooks/useUserSelector";
+import useAppSelector from "../../hooks/useAppSelector";
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str: string) =>
@@ -36,7 +36,7 @@ const fakeCart = [
 
 function CreateOrder() {
   // const [withPriority, setWithPriority] = useState(false);
-  const name = useUserSelector((state) => state.user.userName);
+  const name = useAppSelector((state) => state.user.userName);
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";
   const formErrors = useFormErrors<NewOrder>();

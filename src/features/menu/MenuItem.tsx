@@ -1,13 +1,15 @@
-import { useSelector } from "react-redux";
-import { type MenuType } from "../../types/pizza";
+import { Cart, type MenuType } from "../../types/pizza";
 import { formatCurrency } from "../../utils/helpers";
-import useUserSelector from "../../hooks/useUserSelector";
+import useAppSelector from "../../hooks/useAppSelector";
+import useAppDispatch from "../../hooks/useAppDispatch";
+import { addItem } from "../cart/cartSlice";
 
 type MenuItemProps = {
   handleModelOpen: () => void;
 } & MenuType;
 
 function MenuItem({
+  id,
   name,
   imageUrl,
   ingredients,
@@ -15,13 +17,22 @@ function MenuItem({
   unitPrice,
   handleModelOpen,
 }: MenuItemProps) {
-  const userName = useUserSelector((state) => state.user.userName);
+  const userName = useAppSelector((state) => state.user.userName);
+  const dispatch = useAppDispatch();
 
   function handleAddCart() {
     if (!userName) {
       handleModelOpen();
       return;
     }
+    const newItem: Cart = {
+      pizzaId: id,
+      name,
+      unitPrice,
+      quantity: 1,
+      totalPrice: unitPrice * 1,
+    };
+    dispatch(addItem(newItem));
   }
   return (
     <div className="flex items-start gap-3">

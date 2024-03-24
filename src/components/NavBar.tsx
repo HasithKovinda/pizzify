@@ -3,10 +3,10 @@ import { BiMenu, BiXCircle, BiCart } from "react-icons/bi";
 import Link from "./Link";
 import { Link as RouterLink } from "react-router-dom";
 import SearchOrder from "../features/order/SearchOrder";
-import useUserSelector from "../hooks/useUserSelector";
+import useAppSelector from "../hooks/useAppSelector";
 
 function NavBar() {
-  const userName = useUserSelector((state) => state.user.userName);
+  const userName = useAppSelector((state) => state.user.userName);
   const [showSideBar, setShowSideBar] = useState(false);
   return (
     <nav className="md:flex md:items-center md:justify-between max-w-screen-2xl md:mx-auto px-12  py-3">

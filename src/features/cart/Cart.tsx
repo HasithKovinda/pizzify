@@ -1,4 +1,4 @@
-import useUserSelector from "../../hooks/useUserSelector";
+import useUserSelector from "../../hooks/useAppSelector";
 import CartItem from "./CartItem";
 
 function Cart() {

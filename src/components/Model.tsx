@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { FiX } from "react-icons/fi";
-import useUserDispatch from "../hooks/useUserDispatch";
+import useUserDispatch from "../hooks/useAppDispatch";
 import { updateName } from "../features/user/userSlice";
 import { motion } from "framer-motion";
 
