@@ -4,9 +4,13 @@ import Link from "./Link";
 import { Link as RouterLink } from "react-router-dom";
 import SearchOrder from "../features/order/SearchOrder";
 import useAppSelector from "../hooks/useAppSelector";
+import { totalCartQuantity } from "../features/cart/cartSlice";
 
 function NavBar() {
   const userName = useAppSelector((state) => state.user.userName);
+  const totalQuantity = useAppSelector((state) =>
+    totalCartQuantity(state.cart.cart)
+  );
   const [showSideBar, setShowSideBar] = useState(false);
   return (
     <nav className="md:flex md:items-center md:justify-between max-w-screen-2xl md:mx-auto px-12  py-3">
@@ -32,14 +36,16 @@ function NavBar() {
             Contact
           </a>
         </li>
-        <li className="hover:text-primary transition-all">
-          <a href="#" className=" flex text-primary gap-3">
-            <span>Cart</span>
-            <BiCart className="text-2xl" />
-            <span>01</span>
-            {/* <span>{formatCurrency(30)}</span> */}
-          </a>
-        </li>
+        {totalQuantity ? (
+          <li className="hover:text-primary transition-all">
+            <a href="#" className=" flex text-primary gap-3">
+              <span>Cart</span>
+              <BiCart className="text-2xl" />
+              <span>{totalQuantity}</span>
+              {/* <span>{formatCurrency(30)}</span> */}
+            </a>
+          </li>
+        ) : null}
       </ul>
       <div className="flex items-center text-zinc-600 gap-2">
         <SearchOrder />
