@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import useLoaderData from "../../hooks/useDataLoader";
 import { getMenu } from "../../services/apiRestaurant";
 import { MenuType } from "../../types/pizza";
@@ -13,7 +14,6 @@ function Menu() {
   }
 
   function handleClose() {
-    console.log("AAAAAAAAAAAA");
     setIsModelOpen(false);
   }
   return (
@@ -38,7 +38,9 @@ function Menu() {
           })}
         </article>
       </section>
-      {isModelOpen && <Model handleClose={handleClose} />}
+      <AnimatePresence>
+        {isModelOpen && <Model handleClose={handleClose} />}
+      </AnimatePresence>
     </>
   );
 }
