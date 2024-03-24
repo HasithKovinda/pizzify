@@ -20,12 +20,12 @@ function Model({ handleClose }: { handleClose: () => void }) {
   useEffect(() => {
     function handleModelClose(e: MouseEvent) {
       const targetNode = e.target as Node;
-      if (model.current && model.current.contains(targetNode)) {
+      if (model.current && !model.current.contains(targetNode)) {
         handleClose();
       }
     }
 
-    document.addEventListener("click", handleModelClose);
+    document.addEventListener("click", handleModelClose, true);
 
     return () => document.removeEventListener("click", handleClose, true);
   });
