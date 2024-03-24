@@ -1,8 +1,10 @@
+import { motion } from "framer-motion";
+import React from "react";
 import { Link } from "react-router-dom";
 
-function EmptyCart() {
+const cart = React.forwardRef<HTMLDivElement>(function EmptyCart(_, ref) {
   return (
-    <div className="px-4 py-3 text-center">
+    <div ref={ref} className="px-4 py-3 text-center">
       <Link to="/menu" className="hover:text-primary transition-colors">
         &larr; Back to menu
       </Link>
@@ -12,6 +14,6 @@ function EmptyCart() {
       </p>
     </div>
   );
-}
-
+});
+const EmptyCart = motion(cart, { forwardMotionProps: true });
 export default EmptyCart;

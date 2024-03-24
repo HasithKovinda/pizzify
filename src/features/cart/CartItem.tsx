@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Cart } from "../../types/pizza";
 import { formatCurrency } from "../../utils/helpers";
 import DeleteItem from "./DeleteItem";
@@ -5,7 +6,11 @@ import DeleteItem from "./DeleteItem";
 function CartItem(cart: Cart) {
   const { pizzaId, name, quantity, totalPrice } = cart;
   return (
-    <div className="flex items-center justify-between py-4">
+    <motion.div
+      layout
+      exit={{ opacity: 0, x: "100%" }}
+      className="flex items-center justify-between p-4 bg-slate-100 rounded-lg shadow-lg"
+    >
       <div className="tracking-wide">
         <span>{name}</span>
         <span>&times;</span>
@@ -15,7 +20,7 @@ function CartItem(cart: Cart) {
         <span className="font-semibold">{formatCurrency(totalPrice)}</span>
         <DeleteItem pizzaId={pizzaId} />
       </div>
-    </div>
+    </motion.div>
   );
 }
 
