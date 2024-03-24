@@ -16,7 +16,7 @@ function DeleteItem({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className={`text-primary px-2 py-2 text-left cursor-pointer rounded-lg tracking-wide text-${type ? "2xl" : "xl"} w-28 hover:bg-primary hover:text-white  transition-all`}
+      className={`text-primary px-2 py-2 mt-3 text-left cursor-pointer rounded-lg tracking-wide text-${type ? "2xl" : "xl"} w-28 hover:bg-primary hover:text-white  transition-all`}
       onClick={() => dispatch(deleteItem({ pizzaId }))}
     >
       Remove

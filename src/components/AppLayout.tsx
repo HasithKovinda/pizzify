@@ -8,7 +8,7 @@ function AppLayout() {
   const isLoading = navigation.state === "loading";
 
   return (
-    <div className="grid min-h-screen grid-rows-[auto_1fr_auto]">
+    <div className="lg:grid lg:min-h-screen lg:grid-rows-[auto_1fr_auto]">
       {isLoading && <Loading />}
       <NavBar />
       <Outlet />

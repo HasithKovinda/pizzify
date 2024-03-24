@@ -14,7 +14,7 @@ function NavBar() {
   const [showSideBar, setShowSideBar] = useState(false);
   return (
     <header>
-      <nav className="md:flex md:items-center md:justify-between max-w-screen-2xl md:mx-auto px-12  py-3">
+      <nav className="md:flex md:items-center md:justify-between max-w-screen-2xl md:mx-auto px-12 py-3 relative">
         <div className="flex items-center justify-between py-4 md:p-0">
           <h1 className="font-sans text-3xl font-bold tracking-wide uppercase">
             quick<span className="text-primary">eat</span>
@@ -24,22 +24,30 @@ function NavBar() {
             onClick={() => setShowSideBar(true)}
           />
         </div>
-        <ul className="hidden  md:flex md:px-4 md:text-lg md:tracking-widest md:uppercase md:gap-x-2 lg:gap-x-14">
-          <NavLink to="/">Home </NavLink>
-          <NavLink to="/menu">Menu </NavLink>
-          <NavLink to="/contact">Contact </NavLink>
+        <ul className="md:flex md:px-4 md:text-lg md:tracking-widest md:uppercase md:gap-x-2 lg:gap-x-14">
+          <NavLink to="/" classNames="hidden md:block">
+            Home
+          </NavLink>
+          <NavLink to="/menu" classNames="hidden md:block">
+            Menu
+          </NavLink>
+          <NavLink to="/contact" classNames="hidden md:block">
+            Contact
+          </NavLink>
           {totalQuantity ? (
-            <NavLink to="/cart" classNames="flex text-primary gap-3">
-              <span>Cart</span>
-              <BiCart className="text-2xl" />
-              <span>{totalQuantity}</span>
-            </NavLink>
+            <div className="fixed bottom-4 right-2 py-2 px-3 bg-primary z-40 shadow-xl rounded-lg ">
+              <NavLink to="/cart" classNames="flex  gap-3 text-white">
+                <span>Cart</span>
+                <BiCart className="text-2xl" />
+                <span>{totalQuantity}</span>
+              </NavLink>
+            </div>
           ) : null}
         </ul>
         <div className="flex items-center text-zinc-600 gap-2">
           <SearchOrder />
           {userName && (
-            <span className="text-2xl font-semibold capitalize">
+            <span className="hidden lg:inline-block lg:text-2xl lg:font-semibold lg:capitalize">
               {userName}
             </span>
           )}

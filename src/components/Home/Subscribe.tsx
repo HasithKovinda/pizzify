@@ -4,8 +4,11 @@ import Button from "../Button";
 import RotateAnimation from "../Animations/RotateAnimation";
 function Subscribe() {
   return (
-    <RotateAnimation classNames="max-w-screen-2xl mx-auto mt-20 px-12 lg:flex lg:items-center lg:gap-8 h-full">
-      <div>
+    <RotateAnimation>
+      <div
+        className="max-w-screen-2xl mx-auto mt-20 px-12 lg:flex lg:items-center lg:gap-8 h-full"
+        style={{ overflowX: "hidden" }}
+      >
         <img src={subscribe} alt="subscribe" className="block mx-auto" />
       </div>
       <div className="w-full mt-8 md:mt-8 mx-auto max-w-xl">
@@ -13,7 +16,7 @@ function Subscribe() {
           Get the menu of your favorite restaurants every day
         </h1>
 
-        <div className="mt-10 flex items-center relative max-w-lg">
+        <div className="mt-10 flex items-center relative max-w-lg mx-auto">
           <BiBell className="absolute top-1/2 translate-y-[-50%] left-3 text-gray-400 text-xl" />
           <input
             type="text"

@@ -19,6 +19,7 @@ function RotateAnimation({
   }, [isInView]);
   return (
     <motion.section
+      style={{ overflowX: "hidden" }}
       className={classNames}
       ref={ref}
       variants={{
