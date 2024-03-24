@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { FiX } from "react-icons/fi";
 import useUserDispatch from "../hooks/useUserDispatch";
@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 
 function Model({ handleClose }: { handleClose: () => void }) {
   const [name, setName] = useState("");
+  const model = useRef<HTMLDivElement>(null);
   const dispatch = useUserDispatch();
 
   function handleSubmit() {
@@ -16,8 +17,24 @@ function Model({ handleClose }: { handleClose: () => void }) {
     setName("");
   }
 
+  useEffect(() => {
+    function handleModelClose(e: MouseEvent) {
+      const targetNode = e.target as Node;
+      if (model.current && model.current.contains(targetNode)) {
+        handleClose();
+      }
+    }
+
+    document.addEventListener("click", handleModelClose);
+
+    return () => document.removeEventListener("click", handleClose, true);
+  });
+
   return createPortal(
-    <div className="fixed top-0 left-0 h-full w-full bg-stone-900/60 z-50 flex items-center justify-center">
+    <div
+      className="fixed top-0 left-0 h-full w-full bg-stone-900/60 z-50 flex items-center justify-center"
+      ref={model}
+    >
       <motion.div
         className=" bg-slate-100 p-6 rounded-xl shadow-2xl max-w-xl"
         initial={{ opacity: 0, y: "-100%" }}
