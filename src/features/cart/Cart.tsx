@@ -50,12 +50,12 @@ function Cart() {
             </motion.article>
           </AnimatePresence>
 
-          <div className="">
+          <div>
             <button className="btn text-white p-2 border rounded-lg mr-4 hover:text-primary hover:border-primary transition-all">
               Order Pizzas
             </button>
             <button
-              className="p-2 border border-primary rounded-lg hover:text-primary transition-colors"
+              className="p-2 border border-primary rounded-lg text-zinc-900 font-semibold hover:text-primary transition-colors"
               onClick={() => dispatch(clearCart())}
             >
               Clear Cart

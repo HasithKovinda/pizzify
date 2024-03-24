@@ -5,6 +5,7 @@ import useAppDispatch from "../../hooks/useAppDispatch";
 import { addItem, getCurrentQualityById } from "../cart/cartSlice";
 import DeleteItem from "../cart/DeleteItem";
 import { AnimatePresence, motion } from "framer-motion";
+import UpdateQuantity from "../cart/UpdateQuantity";
 
 type MenuItemProps = {
   handleModelOpen: () => void;
@@ -62,7 +63,10 @@ function MenuItem({
           <p className="uppercase text-slate-400 text-2xl">sold out</p>
         ) : isInCart ? (
           <AnimatePresence>
-            <DeleteItem pizzaId={id} />
+            <div>
+              <UpdateQuantity pizzaId={id} currentQuantity={currentQuantity} />
+              <DeleteItem pizzaId={id} />
+            </div>
           </AnimatePresence>
         ) : (
           <AnimatePresence>
