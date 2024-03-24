@@ -4,6 +4,7 @@ import useAppSelector from "../../hooks/useAppSelector";
 import useAppDispatch from "../../hooks/useAppDispatch";
 import { addItem, getCurrentQualityById } from "../cart/cartSlice";
 import DeleteItem from "../cart/DeleteItem";
+import { AnimatePresence, motion } from "framer-motion";
 
 type MenuItemProps = {
   handleModelOpen: () => void;
@@ -60,14 +61,22 @@ function MenuItem({
         {soldOut ? (
           <p className="uppercase text-slate-400 text-2xl">sold out</p>
         ) : isInCart ? (
-          <DeleteItem pizzaId={id} />
+          <AnimatePresence>
+            <DeleteItem pizzaId={id} />
+          </AnimatePresence>
         ) : (
-          <button
-            className="btn px-2 py-2 text-white border border-primary rounded-xl w-32 hover:text-primary hover:border-primary"
-            onClick={handleAddCart}
-          >
-            Add to Cart
-          </button>
+          <AnimatePresence>
+            <motion.button
+              className="btn px-2 py-2 text-white border border-primary rounded-xl w-32 hover:text-primary hover:border-primary"
+              initial={{ opacity: 0, y: 300 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 0 }}
+              transition={{ duration: 0.9 }}
+              onClick={handleAddCart}
+            >
+              Add to Cart
+            </motion.button>
+          </AnimatePresence>
         )}
       </div>
     </div>

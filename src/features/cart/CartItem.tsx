@@ -13,7 +13,7 @@ function CartItem(cart: Cart) {
       </div>
       <div className="space-x-2">
         <span className="font-semibold">{formatCurrency(totalPrice)}</span>
-        <DeleteItem pizzaId={pizzaId} size="large" />
+        <DeleteItem pizzaId={pizzaId} />
       </div>
     </div>
   );
