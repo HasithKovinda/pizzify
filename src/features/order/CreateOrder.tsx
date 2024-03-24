@@ -3,6 +3,11 @@ import { type Cart, type NewOrder } from "../../types/pizza";
 import { createOrder } from "../../services/apiRestaurant";
 import useFormErrors from "../../hooks/useFormErrors";
 import useAppSelector from "../../hooks/useAppSelector";
+import EmptyCart from "../cart/EmptyCart";
+import store from "../../store";
+import { clearCart, getTotalCartPrice } from "../cart/cartSlice";
+import { formatCurrency } from "../../utils/helpers";
+import { useState } from "react";
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str: string) =>
@@ -35,12 +40,20 @@ const fakeCart = [
 ];
 
 function CreateOrder() {
-  // const [withPriority, setWithPriority] = useState(false);
+  const [withPriority, setWithPriority] = useState(false);
   const name = useAppSelector((state) => state.user.userName);
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";
   const formErrors = useFormErrors<NewOrder>();
-  const cart = fakeCart;
+  const cart = useAppSelector((state) => state.cart.cart);
+  const totalCartPrice = useAppSelector((state) =>
+    getTotalCartPrice(state.cart.cart)
+  );
+
+  const priorityPrice = withPriority ? totalCartPrice * 0.2 : 0;
+  const totalPrice = totalCartPrice + priorityPrice;
+
+  if (!cart.length) return <EmptyCart />;
 
   return (
     <div className="max-w-2xl mx-auto px-12 mt-10">
@@ -81,18 +94,20 @@ function CreateOrder() {
             name="priority"
             id="priority"
             className="h-6 w-6 accent-primary focus:outline-none focus:ring focus:ring-orange-400 focus:ring-offset-2"
-            // value={withPriority}
-            // onChange={(e) => setWithPriority(e.target.checked)}
+            value={`${withPriority}`}
+            onChange={(e) => setWithPriority(e.target.checked)}
           />
           <label htmlFor="priority">Want to yo give your order priority?</label>
         </div>
 
         <div>
           <button
-            className="btn px-2 py-3 text-xl text-white rounded-lg"
+            className="btn px-2 py-3 text-xl text-white rounded-lg disabled:cursor-not-allowed hover:text-primary transition-all"
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Placing Order...." : "Order now"}{" "}
+            {isSubmitting
+              ? "Placing Order...."
+              : `Order now ${formatCurrency(totalPrice)}`}
           </button>
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
         </div>
@@ -107,7 +122,7 @@ export async function action({ request }: { request: Request }) {
     customer: formData.get("customer") as string,
     phone: formData.get("phone") as string,
     address: formData.get("address") as string,
-    priority: (formData.get("priority") as string) === "on",
+    priority: (formData.get("priority") as string) === "true",
     cart: JSON.parse(formData.get("cart") as string) as Cart[],
   };
 
@@ -115,12 +130,14 @@ export async function action({ request }: { request: Request }) {
 
   if (!isValidPhone(order.phone))
     errors.phone = "Please add a valid phone number";
-  if (!isValidPhone(order.customer)) errors.customer = "Please add a name";
-  if (!isValidPhone(order.address)) errors.phone = "Please add a address";
+  if (!order.customer) errors.customer = "Please add a name";
+  if (!order.address) errors.phone = "Please add a address";
 
   if (Object.keys(errors).length > 0) return errors;
 
   const newOrder = await createOrder(order);
+
+  store.dispatch(clearCart());
 
   return redirect(`/order/${newOrder.id}`);
 }
