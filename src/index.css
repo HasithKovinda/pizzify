@@ -65,7 +65,7 @@
     var(--clr-primary) 50%,
     transparent 50%
   );
-  background-size: 500px;
+  background-size: 800px;
   background-repeat: no-repeat;
   transition: background 300ms ease-in-out;
   background-position: 0%;
