@@ -1,6 +1,6 @@
 import { MdAddLocationAlt, MdMarkunread, MdAddCall } from "react-icons/md";
 import contact from "../../asserts/contacts-1.png";
-import { Variants, motion } from "framer-motion";
+import { type Variants, motion } from "framer-motion";
 
 function Information() {
   const parentVariant: Variants = {
