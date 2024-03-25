@@ -66,7 +66,9 @@ function MenuItem({
         </div>
 
         {soldOut ? (
-          <p className="uppercase text-slate-400 text-2xl">sold out</p>
+          <p className="uppercase text-slate-400 text-xl font-semibold">
+            sold out
+          </p>
         ) : isInCart ? (
           <div>
             <UpdateQuantity pizzaId={id} currentQuantity={currentQuantity} />
