@@ -8,6 +8,8 @@ import store from "../../store";
 import { clearCart, getTotalCartPrice } from "../cart/cartSlice";
 import { formatCurrency } from "../../utils/helpers";
 import { useState } from "react";
+import useAppDispatch from "../../hooks/useAppDispatch";
+import { fetchAddress } from "../user/userSlice";
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str: string) =>
@@ -41,10 +43,16 @@ const fakeCart = [
 
 function CreateOrder() {
   const [withPriority, setWithPriority] = useState(false);
-  const name = useAppSelector((state) => state.user.userName);
+  const {
+    userName: name,
+    status,
+    position,
+    address,
+  } = useAppSelector((state) => state.user);
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";
   const formErrors = useFormErrors<NewOrder>();
+  const dispatch = useAppDispatch();
   const cart = useAppSelector((state) => state.cart.cart);
   const totalCartPrice = useAppSelector((state) =>
     getTotalCartPrice(state.cart.cart)
@@ -52,6 +60,8 @@ function CreateOrder() {
 
   const priorityPrice = withPriority ? totalCartPrice * 0.2 : 0;
   const totalPrice = totalCartPrice + priorityPrice;
+
+  const isPositionLoading = status === "loading";
 
   if (!cart.length) return <EmptyCart />;
 
@@ -61,7 +71,7 @@ function CreateOrder() {
         Ready to order? Let's go!
       </h2>
 
-      <Form method="POST" className="space-y-5">
+      <Form method="POST" className="space-y-5 lg:w-[500px]">
         <div>
           <label className="label">First Name</label>
           <input
@@ -81,10 +91,29 @@ function CreateOrder() {
           <span> {formErrors?.phone && formErrors.phone}</span>
         </div>
 
-        <div>
+        <div className="relative">
           <label className="label">Address</label>
           <div>
-            <input type="text" name="address" className="input" required />
+            <input
+              type="text"
+              name="address"
+              className="input"
+              required
+              disabled={isPositionLoading}
+              defaultValue={address}
+            />
+            {!position.latitude && !position.longitude && (
+              <button
+                className="absolute bottom-[5px] right-[4px]  btn p-1   uppercase border text-white border-primary rounded-lg hover:text-primary  transition-all"
+                onClick={(e) => {
+                  e.preventDefault();
+                  dispatch(fetchAddress());
+                }}
+                disabled={isPositionLoading}
+              >
+                get position
+              </button>
+            )}
           </div>
         </div>
 
@@ -103,7 +132,7 @@ function CreateOrder() {
         <div>
           <button
             className="btn px-2 py-3 text-xl text-white rounded-lg disabled:cursor-not-allowed hover:text-primary transition-all"
-            disabled={isSubmitting}
+            disabled={isSubmitting || isPositionLoading}
           >
             {isSubmitting
               ? "Placing Order...."

@@ -11,16 +11,19 @@ function getPosition() {
   });
 }
 
-const fetchAddress = createAsyncThunk("user/fetchAddress", async function () {
-  const positionObj: any = await getPosition();
-  const position = {
-    latitude: positionObj.coords.latitude as number,
-    longitude: positionObj.coords.longitude as number,
-  };
-  const addressObj = await getAddress(position);
-  const address = `${addressObj?.locality}, ${addressObj?.city} ${addressObj?.postcode}, ${addressObj?.countryName}`;
-  return { position, address };
-});
+export const fetchAddress = createAsyncThunk(
+  "user/fetchAddress",
+  async function () {
+    const positionObj: any = await getPosition();
+    const position = {
+      latitude: positionObj.coords.latitude as number,
+      longitude: positionObj.coords.longitude as number,
+    };
+    const addressObj = await getAddress(position);
+    const address = `${addressObj?.locality}, ${addressObj?.city} ${addressObj?.postcode}, ${addressObj?.countryName}`;
+    return { position, address };
+  }
+);
 
 type User = {
   userName: string;
