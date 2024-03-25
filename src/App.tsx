@@ -8,6 +8,7 @@ import CreateOrder, {
 } from "./features/order/CreateOrder";
 import AppLayout from "./components/AppLayout";
 import Error from "./components/Error";
+import Contact from "./components/Contact";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
         element: <Order />,
         loader: orderLoader,
         errorElement: <Error />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
     ],
   },
