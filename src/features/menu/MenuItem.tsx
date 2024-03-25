@@ -4,7 +4,7 @@ import useAppSelector from "../../hooks/useAppSelector";
 import useAppDispatch from "../../hooks/useAppDispatch";
 import { addItem, getCurrentQualityById } from "../cart/cartSlice";
 import DeleteItem from "../cart/DeleteItem";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import UpdateQuantity from "../cart/UpdateQuantity";
 
 type MenuItemProps = {
@@ -42,7 +42,13 @@ function MenuItem({
   );
   const isInCart = currentQuantity > 0;
   return (
-    <div className="flex items-start gap-3">
+    <motion.div
+      className="flex items-start gap-3"
+      variants={{
+        initial: { opacity: 0, x: "-100%" },
+        animate: { opacity: 1, x: 0 },
+      }}
+    >
       <img
         src={imageUrl}
         alt={name}
@@ -62,28 +68,20 @@ function MenuItem({
         {soldOut ? (
           <p className="uppercase text-slate-400 text-2xl">sold out</p>
         ) : isInCart ? (
-          <AnimatePresence>
-            <div>
-              <UpdateQuantity pizzaId={id} currentQuantity={currentQuantity} />
-              <DeleteItem pizzaId={id} />
-            </div>
-          </AnimatePresence>
+          <div>
+            <UpdateQuantity pizzaId={id} currentQuantity={currentQuantity} />
+            <DeleteItem pizzaId={id} />
+          </div>
         ) : (
-          <AnimatePresence>
-            <motion.button
-              className="btn px-2 py-2 text-white border border-primary rounded-xl w-32 hover:text-primary hover:border-primary"
-              initial={{ opacity: 0, y: 300 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 0 }}
-              transition={{ duration: 0.9 }}
-              onClick={handleAddCart}
-            >
-              Add to Cart
-            </motion.button>
-          </AnimatePresence>
+          <button
+            className="btn px-2 py-2 text-white border border-primary rounded-xl w-32 hover:text-primary hover:border-primary"
+            onClick={handleAddCart}
+          >
+            Add to Cart
+          </button>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
