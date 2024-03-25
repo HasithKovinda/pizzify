@@ -1,7 +1,17 @@
 import { MdAddLocationAlt, MdMarkunread, MdAddCall } from "react-icons/md";
 import contact from "../../asserts/contacts-1.png";
+import { Variants, motion } from "framer-motion";
 
 function Information() {
+  const parentVariant: Variants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1, transition: { staggerChildren: 1 } },
+  };
+
+  const childrenVariant: Variants = {
+    initial: { opacity: 0, y: -100 },
+    animate: { opacity: 1, y: 0 },
+  };
   return (
     <section className="max-w-screen-2xl mx-auto mt-20 px-14">
       <div className="lg:flex lg:items-center lg:justify-center lg:gap-7">
@@ -13,16 +23,29 @@ function Information() {
               posuere urna nec tincidunt praesent semper.
             </p>
           </header>
-          <div className="md:flex md:items-stretch md:gap-2 lg:justify-between lg:gap-4">
-            <div className="mt-5 bg-slate-100 p-3 rounded-lg shadow-xl w-72 mx-auto">
+          <motion.div
+            className="md:flex md:items-stretch md:gap-2 lg:justify-between lg:gap-4"
+            initial="initial"
+            animate="animate"
+            variants={parentVariant}
+          >
+            <motion.div
+              className="mt-5 bg-slate-100 p-3 rounded-lg shadow-xl w-72 mx-auto"
+              variants={childrenVariant}
+              transition={{ type: "spring" }}
+            >
               <MdAddLocationAlt className="text-primary text-4xl mb-3" />
               <div className="font-semibold  text-lg space-y-3">
                 <p>1717 Harrison St, San</p>
                 <p>Francisco, CA 94103,</p>
                 <p>United States</p>
               </div>
-            </div>
-            <div className="mt-5 bg-slate-100 p-3 rounded-lg shadow-xl w-72 mx-auto">
+            </motion.div>
+            <motion.div
+              className="mt-5 bg-slate-100 p-3 rounded-lg shadow-xl w-72 mx-auto"
+              variants={childrenVariant}
+              transition={{ type: "spring" }}
+            >
               <MdMarkunread className="text-primary text-4xl mb-3" />
               <div className="font-semibold  text-lg">
                 <p>quick.info@mail.net</p>
@@ -34,8 +57,12 @@ function Information() {
                   consectetur adipisicing elit.
                 </span>
               </div>
-            </div>
-            <div className="mt-5 bg-slate-100 p-3 rounded-lg shadow-xl w-72 mx-auto">
+            </motion.div>
+            <motion.div
+              className="mt-5 bg-slate-100 p-3 rounded-lg shadow-xl w-72 mx-auto"
+              variants={childrenVariant}
+              transition={{ type: "spring" }}
+            >
               <MdAddCall className="text-primary text-4xl mb-3" />
               <div className="font-semibold  text-lg">
                 <p>+7 53534 543543</p>
@@ -47,11 +74,18 @@ function Information() {
                   consectetur adipisicing
                 </span>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
         <div>
-          <img src={contact} alt="contact image" className="hidden lg:block" />
+          <motion.img
+            src={contact}
+            alt="contact image"
+            className="hidden lg:block"
+            initial={{ scale: 0.6, rotate: 45 }}
+            animate={{ scale: 1, rotate: 0 }}
+            transition={{ duration: 0.7 }}
+          />
         </div>
       </div>
     </section>
