@@ -30,7 +30,7 @@ function Information() {
             variants={parentVariant}
           >
             <motion.div
-              className="mt-5 bg-slate-100 p-3 rounded-lg shadow-xl w-72 mx-auto"
+              className="mt-5 bg-slate-100 p-3 rounded-lg shadow-xl w-52 sm:w-72 mx-auto"
               variants={childrenVariant}
               transition={{ type: "spring" }}
             >
@@ -42,7 +42,7 @@ function Information() {
               </div>
             </motion.div>
             <motion.div
-              className="mt-5 bg-slate-100 p-3 rounded-lg shadow-xl w-72 mx-auto"
+              className="mt-5 bg-slate-100 p-3 rounded-lg shadow-xl w-52 sm:w-72 mx-auto"
               variants={childrenVariant}
               transition={{ type: "spring" }}
             >
@@ -59,7 +59,7 @@ function Information() {
               </div>
             </motion.div>
             <motion.div
-              className="mt-5 bg-slate-100 p-3 rounded-lg shadow-xl w-72 mx-auto"
+              className="mt-5 bg-slate-100 p-3 rounded-lg shadow-xl w-52 sm:w-72 mx-auto"
               variants={childrenVariant}
               transition={{ type: "spring" }}
             >
