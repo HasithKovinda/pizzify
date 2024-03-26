@@ -72,6 +72,7 @@ function MenuItem({
         ) : isInCart ? (
           <div>
             <UpdateQuantity pizzaId={id} currentQuantity={currentQuantity} />
+            <p className="mb-2"></p>
             <DeleteItem pizzaId={id} />
           </div>
         ) : (

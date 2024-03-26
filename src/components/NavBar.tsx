@@ -50,6 +50,7 @@ function NavBar() {
                 initial={{ opacity: 0, y: "-100%" }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: "-100%" }}
+                transition={{ type: "spring", duration: 0.8 }}
               >
                 <NavLink to="/cart" classNames="flex  gap-3 text-white">
                   <span>Cart</span>

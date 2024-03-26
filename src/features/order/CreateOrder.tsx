@@ -23,7 +23,8 @@ function CreateOrder() {
     userName: name,
     status,
     position,
-    address,
+    address: userAddress,
+    error,
   } = useAppSelector((state) => state.user);
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";
@@ -81,11 +82,11 @@ function CreateOrder() {
               className="input"
               required
               disabled={isPositionLoading}
-              defaultValue={address}
+              defaultValue={userAddress}
             />
             {!position.latitude && !position.longitude && (
               <button
-                className={`absolute ${formErrors.address ? "bottom-[29px]" : "bottom-[5px]"}  right-[4px]  btn p-1  uppercase border text-white border-primary rounded-lg hover:text-primary  transition-all`}
+                className={`absolute ${formErrors?.address ? "bottom-[29px]" : "top-[40px]"}  right-[4px]  btn p-1  uppercase border text-white border-primary rounded-lg hover:text-primary  transition-all`}
                 onClick={(e) => {
                   e.preventDefault();
                   dispatch(fetchAddress());
@@ -95,9 +96,10 @@ function CreateOrder() {
                 get position
               </button>
             )}
-            <span className="text-red-500">
+            <p className="text-red-500">
               {formErrors?.address && formErrors.address}
-            </span>
+            </p>
+            {error && <span className="text-red-500">{error}</span>}
           </div>
         </div>
 
