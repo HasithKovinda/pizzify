@@ -6,6 +6,7 @@ import NavLink from "./NavLink";
 import { totalCartQuantity } from "../features/cart/cartSlice";
 import SideBar from "./Home/SideBar";
 import { AnimatePresence, motion } from "framer-motion";
+import Logo from "./Logo";
 
 function NavBar() {
   const userName = useAppSelector((state) => state.user.userName);
@@ -26,9 +27,7 @@ function NavBar() {
     <header>
       <nav className="md:flex md:items-center md:justify-between max-w-screen-2xl md:mx-auto px-12 py-3 relative">
         <div className="flex items-center justify-between py-4 md:p-0">
-          <h1 className="font-sans text-3xl font-bold tracking-wide uppercase">
-            quick<span className="text-primary">eat</span>
-          </h1>
+          <Logo />
           <BiMenu
             className="text-primary text-4xl cursor-pointer hover:scale-110 transition-all md:hidden"
             onClick={openSideBar}
