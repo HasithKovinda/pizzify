@@ -6,16 +6,15 @@ import {
   BiLogoInstagram,
   BiLogoTwitter,
 } from "react-icons/bi";
+import Logo from "./Logo";
 function Footer() {
   return (
     <footer className="bg-zinc-900 mt-20 px-10">
       <section className="max-w-screen-2xl mx-auto ">
         <article className="md:flex md:items-start md:gap-7 md:flex-wrap lg:justify-between lg:gap-4 py-16 ">
           <div className="md:max-w-xl">
-            <h1 className="font-sans text-3xl text-white font-bold tracking-wide uppercase mb-8">
-              quick<span className="text-primary">eat</span>
-            </h1>
-            <h1 className="text-2xl sm:text-5xl text-white font-extrabold mb-5">
+            <Logo type="dark" />
+            <h1 className="text-2xl sm:text-5xl text-white font-extrabold mb-5 mt-3">
               The Best Restaurants in Your Home
             </h1>
             <p className="text-slate-300">
