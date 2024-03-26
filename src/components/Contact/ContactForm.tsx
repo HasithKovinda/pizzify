@@ -1,3 +1,4 @@
+import { BiGroup, BiEnvelope } from "react-icons/bi";
 import { motion, useAnimation, useInView } from "framer-motion";
 import Button from "../Button";
 import { useRef, useEffect } from "react";
@@ -46,18 +47,20 @@ function ContactForm() {
           variants={container}
           animate={animation}
         >
-          <motion.div variants={item}>
+          <motion.div variants={item} className="lg:relative">
+            <BiGroup className="hidden lg:block lg:absolute lg:top-1/2 lg:translate-y-[-50%] lg:left-3 lg:text-gray-400 lg:text-2xl" />
             <input
               type="text"
               placeholder="Enter Your Name"
-              className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-primary md:text-lg"
+              className="w-full px-4 lg:px-10 py-2 border border-slate-300 rounded-lg focus:outline-primary md:text-lg"
             />
           </motion.div>
-          <motion.div variants={item}>
+          <motion.div variants={item} className="lg:relative">
+            <BiEnvelope className="hidden lg:block lg:absolute lg:top-1/2 lg:translate-y-[-50%] lg:left-3 lg:text-gray-400 lg:text-2xl" />
             <input
               type="text"
               placeholder="Enter Your Email"
-              className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-primary md:text-lg"
+              className="w-full px-4 lg:px-10 py-2 border border-slate-300 rounded-lg focus:outline-primary md:text-lg"
             />
           </motion.div>
           <motion.div variants={item}>
