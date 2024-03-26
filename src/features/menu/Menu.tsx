@@ -26,7 +26,7 @@ function Menu() {
     <>
       <section className="max-w-screen-2xl mx-auto px-12 mt-10">
         <motion.article
-          className="grid grid-cols-1 gap-6 lg:grid-cols-2"
+          className=" grid grid-cols-1 gap-6 lg:grid-cols-2"
           variants={{
             initial: { opacity: 0 },
             animate: { opacity: 1, transition: { staggerChildren: 0.5 } },

@@ -43,7 +43,7 @@ function MenuItem({
   const isInCart = currentQuantity > 0;
   return (
     <motion.div
-      className="flex items-start gap-3"
+      className=" sm:flex sm:items-start sm:gap-3"
       variants={{
         initial: { opacity: 0, x: "-100%" },
         animate: { opacity: 1, x: 0 },
@@ -52,7 +52,7 @@ function MenuItem({
       <img
         src={imageUrl}
         alt={name}
-        className={`${soldOut ? "grayscale" : ""}  rounded-lg `}
+        className={`${soldOut ? "grayscale" : ""}  rounded-lg`}
       />
       <div className="flex flex-col justify-between h-full">
         <div className="space-y-1">
