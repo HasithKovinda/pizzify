@@ -1,16 +1,18 @@
-import { type Params } from "react-router-dom";
+import { useFetcher, type Params } from "react-router-dom";
 import { getOrder } from "../../services/apiRestaurant";
 import useLoaderData from "../../hooks/useDataLoader";
-import { OrderType } from "../../types/pizza";
+import { MenuType, OrderType } from "../../types/pizza";
 import {
   calcMinutesLeft,
   formatCurrency,
   formatDate,
 } from "../../utils/helpers";
 import OrderItem from "./OrderItem";
+import { useEffect } from "react";
 
 function Order() {
   const order = useLoaderData<OrderType>();
+  const fetcher = useFetcher();
   const {
     id,
     status,
@@ -20,6 +22,18 @@ function Order() {
     estimatedDelivery,
     cart,
   } = order;
+
+  fetcher.state === "idle";
+
+  useEffect(() => {
+    console.log(fetcher);
+    if (!(fetcher.state === "idle")) {
+      fetcher.load("/menu");
+    }
+    // fetcher.load("/menu");
+  }, [fetcher]);
+
+  console.log(fetcher.data);
 
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
 
