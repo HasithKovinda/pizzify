@@ -63,7 +63,7 @@ function Cart() {
               Order Pizzas
             </Link>
             <button
-              className="p-2 border border-primary rounded-lg text-zinc-900 font-semibold hover:text-primary transition-colors"
+              className="p-2 border-2 text-primary border-primary rounded-lg  font-semibold hover:text-zinc-900 transition-colors"
               onClick={() => dispatch(clearCart())}
             >
               Clear Cart

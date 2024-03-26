@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function Logo({ type = "light" }: { type: "light" | "dark" }) {
+export default function Logo({ type = "light" }: { type?: "light" | "dark" }) {
   return (
     <Link to="/">
       <h1

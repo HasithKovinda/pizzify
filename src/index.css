@@ -12,7 +12,7 @@
   }
 
   .input {
-    @apply p-2 rounded-lg border-2 border-slate-500 w-full;
+    @apply p-2 rounded-lg border border-slate-300 w-full;
   }
 }
 

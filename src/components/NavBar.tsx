@@ -3,15 +3,22 @@ import { BiMenu, BiCart } from "react-icons/bi";
 import SearchOrder from "../features/order/SearchOrder";
 import useAppSelector from "../hooks/useAppSelector";
 import NavLink from "./NavLink";
-import { totalCartQuantity } from "../features/cart/cartSlice";
+import {
+  getTotalCartPrice,
+  totalCartQuantity,
+} from "../features/cart/cartSlice";
 import SideBar from "./SideBar";
 import { AnimatePresence, motion } from "framer-motion";
 import Logo from "./Logo";
+import { formatCurrency } from "../utils/helpers";
 
 function NavBar() {
   const userName = useAppSelector((state) => state.user.userName);
   const totalQuantity = useAppSelector((state) =>
     totalCartQuantity(state.cart.cart)
+  );
+  const totalPrice = useAppSelector((state) =>
+    getTotalCartPrice(state.cart.cart)
   );
   const [showSideBar, setShowSideBar] = useState(false);
 
@@ -53,9 +60,13 @@ function NavBar() {
                 transition={{ type: "spring", duration: 0.8 }}
               >
                 <NavLink to="/cart" classNames="flex  gap-3 text-white">
-                  <span>Cart</span>
-                  <BiCart className="text-2xl" />
-                  <span>{totalQuantity}</span>
+                  <span className="flex items-center">
+                    <BiCart className="text-2xl" />
+                    <span>({totalQuantity})</span>
+                  </span>
+                  <span className="font-semibold">
+                    {formatCurrency(totalPrice)}
+                  </span>
                 </NavLink>
               </motion.div>
             ) : null}
