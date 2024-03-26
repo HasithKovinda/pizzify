@@ -15,7 +15,7 @@ function Footer() {
             <h1 className="font-sans text-3xl text-white font-bold tracking-wide uppercase mb-8">
               quick<span className="text-primary">eat</span>
             </h1>
-            <h1 className="text-5xl text-white font-extrabold mb-5">
+            <h1 className="text-2xl sm:text-5xl text-white font-extrabold mb-5">
               The Best Restaurants in Your Home
             </h1>
             <p className="text-slate-300">
