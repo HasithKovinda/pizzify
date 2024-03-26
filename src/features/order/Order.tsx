@@ -12,7 +12,7 @@ import { useEffect } from "react";
 
 function Order() {
   const order = useLoaderData<OrderType>();
-  const fetcher = useFetcher();
+  const fetcher = useFetcher<MenuType[]>();
   const {
     id,
     status,
@@ -27,13 +27,10 @@ function Order() {
 
   useEffect(() => {
     console.log(fetcher);
-    if (!(fetcher.state === "idle")) {
+    if (!fetcher.data && fetcher.state === "idle") {
       fetcher.load("/menu");
     }
-    // fetcher.load("/menu");
   }, [fetcher]);
-
-  console.log(fetcher.data);
 
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
 
@@ -70,7 +67,15 @@ function Order() {
 
         <ul className=" border-b border-t">
           {cart.map((item) => (
-            <OrderItem item={item} key={item.pizzaId} />
+            <OrderItem
+              item={item}
+              key={item.pizzaId}
+              ingredients={
+                fetcher.data?.find((el) => el.id === item.pizzaId)
+                  ?.ingredients ?? []
+              }
+              isLoadingIngredients={fetcher.state === "loading"}
+            />
           ))}
         </ul>
 
