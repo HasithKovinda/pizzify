@@ -32,6 +32,10 @@ function Order() {
     }
   }, [fetcher]);
 
+  useEffect(() => {
+    document.title = "Pizzify | Your Order";
+  }, []);
+
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
 
   return (

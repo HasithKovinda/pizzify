@@ -5,11 +5,16 @@ import CartItem from "./CartItem";
 import { clearCart } from "./cartSlice";
 import EmptyCart from "./EmptyCart";
 import { AnimatePresence, motion } from "framer-motion";
+import { useEffect } from "react";
 
 function Cart() {
   const name = useAppSelector((state) => state.user.userName);
   const cart = useAppSelector((state) => state.cart.cart);
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    document.title = "Pizzify | Cart";
+  }, []);
 
   if (!cart.length)
     return (

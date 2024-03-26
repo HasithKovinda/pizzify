@@ -5,8 +5,12 @@ import Service from "./Home/Service";
 import Subscribe from "./Home/Subscribe";
 import Hero from "./Home/Hero";
 import Works from "./Home/Works";
+import { useEffect } from "react";
 
 function Home() {
+  useEffect(() => {
+    document.title = "Pizzify";
+  }, []);
   return (
     <>
       <Hero />

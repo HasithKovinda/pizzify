@@ -7,7 +7,7 @@ import EmptyCart from "../cart/EmptyCart";
 import store from "../../store";
 import { clearCart, getTotalCartPrice } from "../cart/cartSlice";
 import { formatCurrency } from "../../utils/helpers";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useAppDispatch from "../../hooks/useAppDispatch";
 import { fetchAddress } from "../user/userSlice";
 
@@ -34,6 +34,10 @@ function CreateOrder() {
   const totalCartPrice = useAppSelector((state) =>
     getTotalCartPrice(state.cart.cart)
   );
+
+  useEffect(() => {
+    document.title = "Pizzify | New Order";
+  }, []);
 
   const priorityPrice = withPriority ? totalCartPrice * 0.2 : 0;
   const totalPrice = totalCartPrice + priorityPrice;

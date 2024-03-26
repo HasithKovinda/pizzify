@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import useLoaderData from "../../hooks/useDataLoader";
 import { getMenu } from "../../services/apiRestaurant";
@@ -19,6 +19,10 @@ function Menu() {
   }
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
+
+  useEffect(() => {
+    document.title = "Pizzify | Menu";
+  }, []);
 
   if (isLoading) return null;
 
