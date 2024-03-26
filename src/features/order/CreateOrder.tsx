@@ -17,30 +17,6 @@ const isValidPhone = (str: string) =>
     str
   );
 
-const fakeCart = [
-  {
-    pizzaId: 12,
-    name: "Mediterranean",
-    quantity: 2,
-    unitPrice: 16,
-    totalPrice: 32,
-  },
-  {
-    pizzaId: 6,
-    name: "Vegetale",
-    quantity: 1,
-    unitPrice: 13,
-    totalPrice: 13,
-  },
-  {
-    pizzaId: 11,
-    name: "Spinach and Mushroom",
-    quantity: 1,
-    unitPrice: 15,
-    totalPrice: 15,
-  },
-];
-
 function CreateOrder() {
   const [withPriority, setWithPriority] = useState(false);
   const {
@@ -81,6 +57,9 @@ function CreateOrder() {
             className="input"
             required
           />
+          <span className="text-red-500">
+            {formErrors?.customer && formErrors.customer}
+          </span>
         </div>
 
         <div>
@@ -88,7 +67,9 @@ function CreateOrder() {
           <div>
             <input type="tel" name="phone" className="input" required />
           </div>
-          <span> {formErrors?.phone && formErrors.phone}</span>
+          <span className="text-red-500">
+            {formErrors?.phone && formErrors.phone}
+          </span>
         </div>
 
         <div className="relative">
@@ -104,7 +85,7 @@ function CreateOrder() {
             />
             {!position.latitude && !position.longitude && (
               <button
-                className="absolute bottom-[5px] right-[4px]  btn p-1   uppercase border text-white border-primary rounded-lg hover:text-primary  transition-all"
+                className={`absolute ${formErrors.address ? "bottom-[29px]" : "bottom-[5px]"}  right-[4px]  btn p-1  uppercase border text-white border-primary rounded-lg hover:text-primary  transition-all`}
                 onClick={(e) => {
                   e.preventDefault();
                   dispatch(fetchAddress());
@@ -114,6 +95,9 @@ function CreateOrder() {
                 get position
               </button>
             )}
+            <span className="text-red-500">
+              {formErrors?.address && formErrors.address}
+            </span>
           </div>
         </div>
 
