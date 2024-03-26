@@ -23,7 +23,7 @@ function SingleEvent({ title, image }: serviceType) {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor
         </p>
-        <div className="flex items-center gap-4 mt-5">
+        <div className="flex items-center gap-4 mt-5 flex-wrap">
           <div className="flex items-center gap-2">
             <BiGroup className="text-2xl text-slate-300" />
             <span className=" text-slate-300">by Quickeat</span>

@@ -13,14 +13,16 @@ function Subscribe() {
           Get the menu of your favorite restaurants every day
         </h1>
 
-        <div className="mt-10 flex items-center relative max-w-lg">
+        <div className="mt-10 flex flex-col md:flex-row items-center md:relative max-w-lg">
           <BiBell className="absolute top-1/2 translate-y-[-50%] left-3 text-gray-400 text-xl" />
           <input
             type="text"
             placeholder="Enter Email Address"
-            className="text-xl py-4 px-10  shadow-xl placeholder:text-gray-400 placeholder:text-xl focus:outline-none focus:ring focus:ring-yellow-500"
+            className="text-xl py-4 px-10 shadow-xl placeholder:text-gray-400 placeholder:text-xl focus:outline-none focus:ring focus:ring-yellow-500"
           />
-          <Button name="Subscribe" />
+          <div className="mt-4 md:mt-0">
+            <Button name="Subscribe" />
+          </div>
         </div>
       </div>
     </RotateAnimation>

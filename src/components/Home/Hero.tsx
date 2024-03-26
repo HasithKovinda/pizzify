@@ -7,7 +7,7 @@ function Hero() {
     <FloatAnimation>
       <div className="max-w-screen-2xl px-12 md:flex md:items-center md:justify-between mx-auto">
         <div className="max-w-lg">
-          <h1 className="text-gray-800 text-6xl uppercase font-extrabold leading-snug">
+          <h1 className="text-gray-800 text-4xl  md:text-6xl uppercase font-extrabold leading-snug">
             The Best Restaurants In Your Home
           </h1>
           <p className="text-slate-500 mt-5 mb-8">

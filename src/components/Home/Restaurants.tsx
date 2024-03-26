@@ -1,5 +1,4 @@
 import { restaurantData } from "../../data/data";
-import RotateAnimation from "../Animations/RotateAnimation";
 import SingleRestaurant from "./SingleRestaurant";
 
 function Restaurants() {

@@ -34,7 +34,7 @@ function Events() {
             <img
               src={team}
               alt="team image"
-              className=" h-96 md:max-w-2xl w-full rounded-xl"
+              className="hidden md:block object-cover h-96 md:max-w-2xl w-full rounded-xl"
             />
             <h2 className="text-gray-800 font-bold text-4xl mt-5">
               We Have Received An Award For The Quality Of Our Work
@@ -48,7 +48,7 @@ function Events() {
               Read More &rarr;
             </button>
           </div>
-          <div className="flex items-center gap-4 mt-5">
+          <div className="flex items-center gap-4 mt-5 flex-wrap">
             <div className="flex items-center gap-2">
               <BiGroup className="text-2xl text-slate-300" />
               <span className=" text-slate-300">by Quickeat</span>
