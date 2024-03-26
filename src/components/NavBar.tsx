@@ -4,7 +4,7 @@ import SearchOrder from "../features/order/SearchOrder";
 import useAppSelector from "../hooks/useAppSelector";
 import NavLink from "./NavLink";
 import { totalCartQuantity } from "../features/cart/cartSlice";
-import SideBar from "./Home/SideBar";
+import SideBar from "./SideBar";
 import { AnimatePresence, motion } from "framer-motion";
 import Logo from "./Logo";
 
@@ -61,7 +61,7 @@ function NavBar() {
           </AnimatePresence>
         </ul>
         <div className="flex items-center text-zinc-600 gap-2">
-          <SearchOrder />
+          <SearchOrder type="large" />
           {userName && (
             <span className="hidden lg:inline-block lg:text-2xl lg:font-semibold lg:capitalize">
               {userName}

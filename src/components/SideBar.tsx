@@ -1,12 +1,13 @@
 import { BiXCircle } from "react-icons/bi";
-import Link from "../Link";
+import Link from "./Link";
 import { motion } from "framer-motion";
-import Logo from "../Logo";
+import Logo from "./Logo";
+import SearchOrder from "../features/order/SearchOrder";
 
 function SideBar({ closeSideBar }: { closeSideBar: () => void }) {
   return (
     <motion.aside
-      className={`min-h-screen w-full fixed top-0 left-0 bg-slate-100`}
+      className={`min-h-screen w-full fixed top-0 left-0 bg-slate-100 z-50`}
       initial={{ x: "-100%" }}
       animate={{ x: 0 }}
       exit={{ x: "-100%" }}
@@ -24,11 +25,12 @@ function SideBar({ closeSideBar }: { closeSideBar: () => void }) {
           <Link to="/">Home</Link>
         </li>
         <li onClick={closeSideBar}>
-          <Link to="/about">About</Link>
+          <Link to="/menu">Menu</Link>
         </li>
         <li onClick={closeSideBar}>
           <Link to="/contact">Contact</Link>
         </li>
+        <SearchOrder type="small" hidden={false} search={closeSideBar} />
       </ul>
     </motion.aside>
   );
