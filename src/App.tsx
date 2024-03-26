@@ -7,13 +7,14 @@ import CreateOrder, {
   action as createOrderAction,
 } from "./features/order/CreateOrder";
 import AppLayout from "./components/AppLayout";
-import Error from "./components/Error";
+import NotFound from "./components/NotFound";
 import Contact from "./components/Contact";
+import Error from "./components/Error";
 
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
-    errorElement: <Error />,
+    errorElement: <NotFound />,
     children: [
       {
         path: "/",
@@ -28,11 +29,13 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+        errorElement: <Error />,
       },
       {
         path: "/order/new",
         element: <CreateOrder />,
         action: createOrderAction,
+        errorElement: <Error />,
       },
       {
         path: "/order/:orderId",
