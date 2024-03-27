@@ -19,11 +19,11 @@ function Subscribe() {
         </h1>
 
         <div className="mt-10 flex flex-col md:flex-row items-center md:relative max-w-lg">
-          <BiBell className="absolute top-1/2 translate-y-[-50%] left-3 text-gray-400 text-xl" />
+          <BiBell className="hidden md:block absolute top-1/2 translate-y-[-50%] left-3 text-gray-400 text-xl" />
           <input
             type="text"
             placeholder="Enter Email Address"
-            className="text-xl py-4 px-10 shadow-xl placeholder:text-gray-400 placeholder:text-xl focus:outline-none focus:ring focus:ring-yellow-500"
+            className="text-sm sm:text-xl py-4 px-2 sm:px-10 shadow-xl placeholder:text-gray-400 placeholder:text:sm placeholder:sm:text-xl focus:outline-none focus:ring focus:ring-yellow-500"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />

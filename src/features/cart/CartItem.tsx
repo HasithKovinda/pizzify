@@ -15,17 +15,19 @@ function CartItem(cart: Cart) {
     <motion.div
       layout
       exit={{ opacity: 0, x: "100%" }}
-      className="flex items-center justify-between p-4 bg-slate-100 rounded-lg shadow-lg"
+      className="sm:flex sm:items-center px-4 py-2 sm:w-full sm:m-0 sm:justify-between sm:p-4 bg-slate-100 rounded-lg shadow-lg"
     >
-      <div className="tracking-wide">
+      <div className="tracking-wide mb-3 px-2 sm:px-0 sm:mb-0">
         <span>{name}</span>
         <span>&times;</span>
         <span>{quantity}</span>
       </div>
 
-      <div className="flex items-center gap-3">
+      <div className="sm:flex sm:items-center sm:gap-3 px-2 sm:px-0">
         <UpdateQuantity pizzaId={pizzaId} currentQuantity={currentQuantity} />
-        <span className="font-semibold">{formatCurrency(totalPrice)}</span>
+        <span className="font-semibold mt-3 mb-3 inline-block">
+          {formatCurrency(totalPrice)}
+        </span>
         <DeleteItem pizzaId={pizzaId} />
       </div>
     </motion.div>

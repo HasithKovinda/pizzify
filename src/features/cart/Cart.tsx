@@ -58,7 +58,7 @@ function Cart() {
           <div>
             <Link
               to="/order/new"
-              className="btn text-white p-2 border rounded-lg mr-4 hover:text-primary hover:border-primary transition-all"
+              className="btn text-white p-2 border rounded-lg mr-4 mb-3 inline-block hover:text-primary hover:border-primary transition-all"
             >
               Order Pizzas
             </Link>
