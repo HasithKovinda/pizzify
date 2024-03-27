@@ -36,7 +36,7 @@ function Model({ handleClose }: { handleClose: () => void }) {
       ref={model}
     >
       <motion.div
-        className=" bg-slate-100 p-6 rounded-xl shadow-2xl max-w-xl"
+        className=" bg-slate-100 p-6 rounded-xl shadow-2xl max-w-xl w-80 sm:w-full"
         initial={{ opacity: 0, y: "-100%" }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: "-100%" }}
@@ -48,10 +48,10 @@ function Model({ handleClose }: { handleClose: () => void }) {
             onClick={handleClose}
           />
         </div>
-        <h1 className="text-3xl font-semibold mb-3">
+        <h1 className="text-lg sm:text-3xl font-semibold mb-3">
           User Information Required
         </h1>
-        <span className="text-lightGray inline-block mb-5">
+        <span className="text-lightGray text-sm sm:text-lg inline-block mb-5">
           To add items to the cart we need your user name.Please add valid user
           name.This name will be used for your delivery.
         </span>

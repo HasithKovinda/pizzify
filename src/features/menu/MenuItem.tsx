@@ -54,7 +54,7 @@ function MenuItem({
         alt={name}
         className={`${soldOut ? "grayscale" : ""}  rounded-lg`}
       />
-      <div className="flex flex-col justify-between h-full">
+      <div className="sm:flex sm:flex-col sm:justify-between h-full">
         <div className="space-y-1">
           <p className="text-2xl tracking-wider font-semibold">{name}</p>
           <div className="space-x-2">
