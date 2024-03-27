@@ -5,7 +5,7 @@ import useAppSelector from "../hooks/useAppSelector";
 import NavLink from "./NavLink";
 import {
   getTotalCartPrice,
-  totalCartQuantity,
+  getTotalCartQuantity,
 } from "../features/cart/cartSlice";
 import SideBar from "./SideBar";
 import { AnimatePresence, motion } from "framer-motion";
@@ -15,7 +15,7 @@ import { formatCurrency } from "../utils/helpers";
 function NavBar() {
   const userName = useAppSelector((state) => state.user.userName);
   const totalQuantity = useAppSelector((state) =>
-    totalCartQuantity(state.cart.cart)
+    getTotalCartQuantity(state.cart.cart)
   );
   const totalPrice = useAppSelector((state) =>
     getTotalCartPrice(state.cart.cart)
