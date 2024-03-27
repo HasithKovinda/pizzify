@@ -58,7 +58,7 @@ export function totalCartQuantity(cart: Cart[]) {
 }
 
 export function getTotalCartPrice(cart: Cart[]) {
-  return cart.reduce((sum, item) => item.unitPrice + sum, 0);
+  return cart.reduce((sum, item) => item.totalPrice + sum, 0);
 }
 
 export function getCurrentQualityById(id: number, state: Cart[]) {
