@@ -59,6 +59,10 @@
   }
 }
 
+body {
+  background: #fff7ed;
+}
+
 .btn {
   background-image: linear-gradient(
     30deg,
