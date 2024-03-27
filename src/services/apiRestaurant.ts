@@ -38,19 +38,22 @@ export async function createOrder(newOrder: NewOrder): Promise<OrderType> {
   }
 }
 
-// export async function updateOrder(id, updateObj) {
-//   try {
-//     const res = await fetch(`${API_URL}/order/${id}`, {
-//       method: 'PATCH',
-//       body: JSON.stringify(updateObj),
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//     });
+export async function updateOrder(
+  id: string,
+  updateObj: { priority: boolean }
+) {
+  try {
+    const res = await fetch(`${API_URL}/order/${id}`, {
+      method: "PATCH",
+      body: JSON.stringify(updateObj),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
-//     if (!res.ok) throw Error();
-//     // We don't need the data, so we don't return anything
-//   } catch (err) {
-//     throw Error('Failed updating your order');
-//   }
-// }
+    if (!res.ok) throw Error();
+    // We don't need the data, so we don't return anything
+  } catch (err) {
+    throw Error("Failed updating your order");
+  }
+}
