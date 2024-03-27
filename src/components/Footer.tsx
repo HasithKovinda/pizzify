@@ -49,7 +49,7 @@ function Footer() {
               </div>
               <div className="flex items-center gap-3 text-slate-300">
                 <BiEnvelopeOpen className="text-lg" />
-                <p>qucikeat@gmail.com</p>
+                <p>pizzify@gmail.com</p>
               </div>
               <div className="flex items-center gap-3 text-slate-300">
                 <BiPhone className="text-lg" />
@@ -72,7 +72,7 @@ function Footer() {
         <div className="border-b-2 border-b-gray-400 w-full mb-8"></div>
         <div className="md:flex md:items-center md:justify-between w-full ">
           <p className="text-slate-100 md:mb-8">
-            Copyright © {new Date().getFullYear()}. Quickeat. All rights
+            Copyright © {new Date().getFullYear()}. Pizzify All rights
             reserved.
           </p>
           <div className="text-slate-100 md:mb-8">

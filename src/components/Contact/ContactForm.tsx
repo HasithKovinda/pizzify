@@ -1,10 +1,10 @@
 import { BiGroup, BiEnvelope } from "react-icons/bi";
 import { motion, useAnimation, useInView } from "framer-motion";
 import Button from "../Button";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, FormEvent } from "react";
 
 function ContactForm() {
-  const ref = useRef(null);
+  const ref = useRef<HTMLFormElement>(null);
   const isInView = useInView(ref);
   const animation = useAnimation();
   useEffect(() => {
@@ -29,6 +29,11 @@ function ContactForm() {
     },
   };
 
+  function handleForm(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (ref.current) ref.current.reset();
+  }
+
   return (
     <div>
       <section className="max-w-screen-2xl mx-auto mt-20 px-14 bg-gray-50 rounded-xl p-6 shadow-xl">
@@ -40,6 +45,7 @@ function ContactForm() {
           </p>
         </header>
         <motion.form
+          onSubmit={handleForm}
           ref={ref}
           action=""
           className="mt-5 space-y-3 max-w-xl lg:max-w-2xl mx-auto"
