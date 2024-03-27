@@ -8,14 +8,14 @@ import CreateOrder, {
 } from "./features/order/CreateOrder";
 import { action as orderUpdateAction } from "./features/order/UpdateOrder";
 import AppLayout from "./components/AppLayout";
-import NotFound from "./components/NotFound";
+import PageNotFound from "./components/PageNotFound";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
-    errorElement: <NotFound />,
+    errorElement: <PageNotFound />,
     children: [
       {
         path: "/",

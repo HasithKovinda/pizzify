@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import notFound from "../asserts/404.png";
 import { motion } from "framer-motion";
 
-function NotFound() {
+function PageNotFound() {
   const navigate = useNavigate();
 
   return (
@@ -32,4 +32,4 @@ function NotFound() {
   );
 }
 
-export default NotFound;
+export default PageNotFound;
