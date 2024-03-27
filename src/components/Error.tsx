@@ -4,7 +4,7 @@ function Error() {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className="max-w-screen-2xl mx-auto px-12">
       <h1 className="text-2xl font-semibold mb-2">Something went wrong 😢</h1>
       <p className="mb-2 text-lightGray">Please Try Aging Letter!</p>
       <button
