@@ -1,30 +1,44 @@
-# React + TypeScript + Vite
+# Pizzify: Online Pizza Ordering Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to Pizzify, your go-to online pizza ordering company ❤️❤️❤️!.
 
-Currently, two official plugins are available:
+## Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Pizzify is an online platform designed to streamline the process of ordering delicious pizzas from the comfort of your own home.Users can select pizza from the menu and add to cart and view the cart and order the pizza. This project is build using react typesctipt.
 
-## Expanding the ESLint configuration
+## Advanced Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### React Router
 
-- Configure the top-level `parserOptions` property like this:
+Application leverages advanced features of React Router to provide seamless navigation and routing,data fetching,server actions and data revalidation etc.Checkout the [React Router's official website](https://reactrouter.com/) for more information.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+### Redux Toolkit and Thunk API with TypeScript
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+For the global state management, utilize Redux Toolkit along with Thunk middleware, fully typed with TypeScript. This combination offers a streamlined approach to managing application state, ensuring type safety and scalability.Checkout the[official Redux documentation](https://redux.js.org/) for more information.
+
+### Tailwind CSS
+
+Styling in our project is done using Tailwind CSS, a utility-first CSS framework Check out the [Tailwind CSS documentation](https://tailwindcss.com/docs) for more information.
+
+### Mobile Responsiveness
+
+Pizzify application is fully mobile responsive, ensuring a consistent and enjoyable experience across various devices and screen sizes.
+
+### Animations
+
+To enhance user experience, we incorporate beautiful and complex animations using Framer Motion library. Framer Motion provides an intuitive API for creating fluid animations and gestures. Refer to the [Framer Motion documentation](https://www.framer.com/api/motion/) for examples and usage guidelines.
+
+## Getting Started
+
+To get started with Pizzify, follow these steps:
+
+1. **Clone the Repository:**
+2. **Install Dependencies:**
+3. **Run the Application:**
+4. **Open in Browser:**
+
+## Contributing
+
+We welcome contributions from the community! If you have any suggestions, bug fixes, or new features to propose, feel free to open an issue or submit a pull request.
+
+Happy coding! 🚀
