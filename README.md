@@ -10,11 +10,11 @@ Pizzify is an online platform designed to streamline the process of ordering del
 
 ### React Router
 
-Application leverages advanced features of React Router to provide seamless navigation and routing,data fetching,server actions and data revalidation etc.Checkout the [React Router's official website](https://reactrouter.com/) for more information.
+The application leverages advanced features of React Router to provide seamless navigation and routing,data fetching,server actions and data revalidation etc. Checkout the [React Router's official website](https://reactrouter.com/) for more information.
 
-### Redux Toolkit and Thunk API with TypeScript
+### Redux Toolkit and Thunk middleware with TypeScript
 
-For the global state management, utilize Redux Toolkit along with Thunk middleware, fully typed with TypeScript. This combination offers a streamlined approach to managing application state, ensuring type safety and scalability.Checkout the[official Redux documentation](https://redux.js.org/) for more information.
+For global state management, utilize Redux Toolkit along with Thunk middleware, fully typed with TypeScript. This combination offers a streamlined approach to managing application state, ensuring type safety and scalability.Checkout the[official Redux documentation](https://redux.js.org/) for more information.
 
 ### Tailwind CSS
 
@@ -26,7 +26,7 @@ Pizzify application is fully mobile responsive, ensuring a consistent and enjoya
 
 ### Animations
 
-To enhance user experience, we incorporate beautiful and complex animations using Framer Motion library. Framer Motion provides an intuitive API for creating fluid animations and gestures. Refer to the [Framer Motion documentation](https://www.framer.com/api/motion/) for examples and usage guidelines.
+To enhance user experience, we incorporate beautiful and complex animations using the Framer Motion library. Framer Motion provides an intuitive API for creating fluid animations and gestures. Refer to the [Framer Motion documentation](https://www.framer.com/api/motion/) for examples and usage guidelines.
 
 ## Getting Started
 
