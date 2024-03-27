@@ -1,6 +1,6 @@
 # Pizzify: Online Pizza Ordering Platform
 
-Welcome to Pizzify, your go-to online pizza ordering company ❤️❤️❤️!.
+Welcome to Pizzify, your go-to online pizza ordering company ❤️❤️❤️
 
 ## Description
 
