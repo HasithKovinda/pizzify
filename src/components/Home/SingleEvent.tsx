@@ -26,7 +26,7 @@ function SingleEvent({ title, image }: serviceType) {
         <div className="flex items-center gap-4 mt-5 flex-wrap">
           <div className="flex items-center gap-2">
             <BiGroup className="text-2xl text-slate-300" />
-            <span className=" text-slate-300">by Quickeat</span>
+            <span className=" text-slate-300">by Pizzify</span>
           </div>
           <div className="flex items-center gap-2">
             <BiCalendar className="text-2xl text-slate-300" />
